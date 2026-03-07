@@ -1,0 +1,311 @@
+{
+  "name": "Borja Quevedo Pablos",
+  "email": "borja.quevedo.pablos@gmail.com",
+  "badge": {
+    "en": "Open to new challenges",
+    "es": "Abierto a nuevos retos"
+  },
+  "headline": {
+    "en": "Senior Android Developer",
+    "es": "Desarrollador Android Senior"
+  },
+  "subheadline": {
+    "en": "Turning complex ideas into scalable Android apps — powered by Kotlin and clean architecture.",
+    "es": "Convirtiendo ideas complejas en apps Android escalables — impulsado por Kotlin y arquitectura limpia."
+  },
+  "heroDescription": {
+    "en": "17+ years building software that matters. Currently at Minddistrict, developing the secure mobile platform that delivers digitally enabled mental health therapy to 250,000+ patients across Europe — because technology should help people heal. Before that, 14 years at GMV building everything from award-winning satellite tolling to EU border security and citizen science.",
+    "es": "Más de 17 años construyendo software que importa. Actualmente en Minddistrict, desarrollando la plataforma móvil segura que ofrece terapia de salud mental digital a más de 250.000 pacientes en toda Europa — porque la tecnología debería ayudar a las personas a sanar. Antes, 14 años en GMV construyendo desde peaje por satélite galardonado hasta seguridad fronteriza europea y ciencia ciudadana."
+  },
+  "aboutTitle": {
+    "en": "About me",
+    "es": "Sobre mí"
+  },
+  "bio": {
+    "en": "I'm a passionate software developer who found his home in the Android ecosystem. After cutting my teeth on backend systems in Java and .NET, I made the jump to mobile development and never looked back. I thrive on solving complex problems with clean, maintainable code — whether that's building secure health platforms, V2X communication systems, or environmental monitoring apps. When I'm not coding, you'll find me exploring functional programming concepts, contributing to open source, or mentoring fellow developers. I believe great software is built by people who care about both the craft and the humans using it.",
+    "es": "Soy un desarrollador de software apasionado que encontró su hogar en el ecosistema Android. Después de forjarme en sistemas backend con Java y .NET, di el salto al desarrollo móvil y nunca miré atrás. Disfruto resolviendo problemas complejos con código limpio y mantenible — ya sea construyendo plataformas de salud seguras, sistemas de comunicación V2X, o aplicaciones de monitorización medioambiental. Cuando no estoy programando, me encontrarás explorando conceptos de programación funcional, contribuyendo al código abierto, o mentorizando a otros desarrolladores. Creo que el gran software lo construyen personas que se preocupan tanto por el oficio como por los humanos que lo usan."
+  },
+  "description": {
+    "en": "Portfolio of Borja Quevedo Pablos — Senior Android Developer specializing in Kotlin, clean architecture, and secure mobile applications.",
+    "es": "Portfolio de Borja Quevedo Pablos — Desarrollador Android Senior especializado en Kotlin, arquitectura limpia y aplicaciones móviles seguras."
+  },
+  "location": "Valladolid, Spain",
+  "avatar": "https://avatars.githubusercontent.com/u/2797575?v=4",
+  "github": {
+    "username": "niltsiar",
+    "url": "https://github.com/niltsiar",
+    "publicRepos": 48,
+    "followers": 21
+  },
+  "linkedin": "https://linkedin.com/in/bquepab",
+  "mastodon": "https://androiddev.social/@niltsiar",
+  "experience": [
+    {
+      "company": "Minddistrict",
+      "role": {
+        "en": "Senior Android Developer",
+        "es": "Desarrollador Android Senior"
+      },
+      "period": "2022 - present",
+      "duration": {
+        "en": "3+ years",
+        "es": "3+ años"
+      },
+      "description": {
+        "en": "Development of a secure mobile application for Minddistrict's online mental health platform — a CE-certified medical device serving 250,000+ users across 8 countries with encrypted communication and blended care interventions. Full remote from Spain for a Netherlands-based company.",
+        "es": "Desarrollo de una aplicación móvil segura para la plataforma de salud mental online de Minddistrict — un dispositivo médico con certificación CE que sirve a más de 250.000 usuarios en 8 países con comunicación cifrada e intervenciones de cuidado mixto. Trabajo completamente remoto desde España para una empresa con sede en Países Bajos."
+      },
+      "current": true
+    },
+    {
+      "company": "GMV",
+      "role": {
+        "en": "Mobile Tech Lead / Android Developer",
+        "es": "Mobile Tech Lead / Desarrollador Android"
+      },
+      "period": "2012 - 2022",
+      "duration": {
+        "en": "10 years",
+        "es": "10 años"
+      },
+      "description": {
+        "en": "Led mobile development across high-impact projects: the award-winning SATELISE satellite tolling system, Covclear COVID-19 office access management, C-ROADS V2X vehicle communication for the EU, URBAN GreenUP citizen science for Horizon 2020, and EUROPORT logistics for ESA. Also served as internal Git trainer for the company.",
+        "es": "Líder del desarrollo móvil en proyectos de alto impacto: el galardonado sistema de peaje por satélite SATELISE, la gestión de acceso a oficinas CovClear durante el COVID-19, comunicación V2X C-ROADS para la UE, ciencia ciudadana URBAN GreenUP para Horizon 2020, y logística EUROPORT para la ESA. También formador interno de Git para la empresa."
+      },
+      "current": false
+    },
+    {
+      "company": "GMV",
+      "role": {
+        "en": "Java Backend Developer",
+        "es": "Desarrollador Backend Java"
+      },
+      "period": "2011 - 2012",
+      "duration": {
+        "en": "1 year",
+        "es": "1 año"
+      },
+      "description": {
+        "en": "Backend development with Spring Framework for the European Fisheries Control Agency (EFCA) — building the Electronic Recording and Reporting System (ERRS) to process and store fishing vessel data and catch quotas across the EU.",
+        "es": "Desarrollo backend con Spring Framework para la Agencia Europea de Control de la Pesca (EFCA) — construyendo el Sistema Electrónico de Registro e Informe (ERRS) para procesar y almacenar datos de buques pesqueros y cuotas de captura en toda la UE."
+      },
+      "current": false
+    },
+    {
+      "company": "GMV",
+      "role": {
+        "en": ".NET Developer",
+        "es": "Desarrollador .NET"
+      },
+      "period": "2008 - 2011",
+      "duration": {
+        "en": "3 years",
+        "es": "3 años"
+      },
+      "description": {
+        "en": "Backend and desktop application development for maritime systems. Contributed to ShipLocus — GMV's flagship AIS maritime traffic management platform for Puertos del Estado (Spanish Port Authority) and the Port of Santa Cruz de Tenerife, developing modules for real-time vessel tracking and radar integration.",
+        "es": "Desarrollo de aplicaciones backend y de escritorio para sistemas marítimos. Contribución al proyecto ShipLocus — la plataforma insignia de gestión de tráfico marítimo AIS de GMV para Puertos del Estado y el Puerto de Santa Cruz de Tenerife, desarrollando módulos de seguimiento de buques en tiempo real e integración radar."
+      },
+      "current": false
+    }
+  ],
+  "projects": [
+    {
+      "name": "Minddistrict",
+      "description": {
+        "en": "Secure mobile platform for online mental health therapy — a CE-certified medical device serving 250,000+ users across Europe with encrypted blended care interventions.",
+        "es": "Plataforma móvil segura para terapia de salud mental online — un dispositivo médico con certificación CE que sirve a más de 250.000 usuarios en Europa con intervenciones de cuidado mixto cifradas."
+      },
+      "skills": ["Kotlin", "Android", "Clean Architecture", "Security"],
+      "period": "2022 - present",
+      "url": "https://www.minddistrict.com"
+    },
+    {
+      "name": "KMP Pokedex",
+      "description": {
+        "en": "Kotlin Multiplatform showcase with dual-UI design systems (Material Design 3 Expressive + Compose Unstyled), shared business logic across Android, iOS, Desktop, and Server.",
+        "es": "Proyecto de demostración Kotlin Multiplatform con sistemas de diseño dual (Material Design 3 Expressive + Compose Unstyled), lógica de negocio compartida entre Android, iOS, Desktop y Servidor."
+      },
+      "skills": ["Kotlin Multiplatform", "Compose", "Ktor", "Koin"],
+      "period": "2025",
+      "url": "https://github.com/niltsiar/kotlin_multiplatform_pokedex"
+    },
+    {
+      "name": "SATELISE",
+      "description": {
+        "en": "Award-winning satellite-based tolling system using GNSS geofencing and virtual gantries — developed for Cintra (Ferrovial), deployed on motorways in Spain and Portugal. Winner of ITS 2022 Award.",
+        "es": "Galardonado sistema de peaje por satélite usando geovallas GNSS y pórticos virtuales — desarrollado para Cintra (Ferrovial), desplegado en autopistas de España y Portugal. Ganador del premio ITS 2022."
+      },
+      "skills": ["Android", "iOS", "GNSS", "DGT Integration"],
+      "period": "2015 - 2022",
+      "url": "https://satelise.com"
+    },
+    {
+      "name": "Covclear",
+      "description": {
+        "en": "Enterprise COVID-19 office access management app — daily health screening, QR-based access control, internal contact tracing, and real-time occupancy monitoring. Built internally at GMV for a safe return to the office.",
+        "es": "Aplicación empresarial de gestión de acceso a oficinas COVID-19 — evaluación de salud diaria, control de acceso por QR, rastreo de contactos interno y monitorización de ocupación en tiempo real. Desarrollada internamente en GMV para un regreso seguro a la oficina."
+      },
+      "skills": ["Android", "Kotlin", "Security", "GDPR"],
+      "period": "2020 - 2021",
+      "url": "https://www.gmv.com/en/communication/press-room/press-releases/gmv-creates-mobile-app-ensure-safer-return-work"
+    },
+    {
+      "name": "C-ROADS V2X",
+      "description": {
+        "en": "HMI application for the Madrid sub-pilot of C-ROADS, the flagship EU initiative for Cooperative Intelligent Transport Systems — delivering real-time V2X safety alerts across 12,000+ km of Spanish roads.",
+        "es": "Aplicación HMI para el sub-piloto de Madrid de C-ROADS, la iniciativa insignia de la UE para Sistemas de Transporte Inteligente Cooperativo — entregando alertas de seguridad V2X en tiempo real en más de 12.000 km de carreteras españolas."
+      },
+      "skills": ["Android", "V2X", "HMI", "C-ITS"],
+      "period": "2020 - 2021",
+      "url": "https://www.c-roads.eu"
+    },
+    {
+      "name": "URBAN GreenUP",
+      "description": {
+        "en": "Citizen science platform for the EU Horizon 2020 project on urban re-naturing — empowering communities in Valladolid (front-runner city) to track biodiversity and Nature-Based Solutions.",
+        "es": "Plataforma de ciencia ciudadana para el proyecto EU Horizon 2020 de renaturalización urbana — empoderando a comunidades en Valladolid (ciudad piloto) para rastrear biodiversidad y Soluciones Basadas en la Naturaleza."
+      },
+      "skills": ["Android", "Geolocation", "Citizen Science"],
+      "period": "2018 - 2020",
+      "url": "https://www.urbangreenup.eu"
+    },
+    {
+      "name": "EUROPORT",
+      "description": {
+        "en": "ESA-funded mobile applications for intermodal freight transport optimization across European ports — real-time cargo tracking, vessel arrival predictions, and terminal scheduling using GNSS and satellite communications.",
+        "es": "Aplicaciones móviles financiadas por la ESA para la optimización del transporte intermodal de mercancías en puertos europeos — seguimiento de carga en tiempo real, predicción de llegada de buques y planificación de terminales usando GNSS y comunicaciones por satélite."
+      },
+      "skills": ["Android", "iOS", "GNSS", "Satellite Comms"],
+      "period": "2013",
+      "url": "https://business.esa.int/projects/europort"
+    },
+    {
+      "name": "ShipLocus",
+      "description": {
+        "en": "Core modules for GMV's flagship maritime traffic management platform — real-time AIS vessel tracking, radar integration, and traffic density analysis for the Spanish National AIS Network (Puertos del Estado) and Port of Santa Cruz de Tenerife.",
+        "es": "Módulos centrales de la plataforma insignia de gestión de tráfico marítimo de GMV — seguimiento de buques AIS en tiempo real, integración radar y análisis de densidad de tráfico para la Red Nacional AIS (Puertos del Estado) y el Puerto de Santa Cruz de Tenerife."
+      },
+      "skills": [".NET", "AIS", "GIS", "Real-time"],
+      "period": "2009 - 2012",
+      "url": "https://www.gmv.com/en/products/defense-and-security/shiplocus"
+    }
+  ],
+  "skills": {
+    "main": ["Kotlin", "Android", "Java"],
+    "mobile": ["Android SDK", "Jetpack Compose", "Kotlin Multiplatform"],
+    "architecture": ["Clean Architecture", "MVVM", "Software Architecture (CPSA)"],
+    "tools": ["Git", "Gradle", "CI/CD", "Linux"]
+  },
+  "education": [
+    {
+      "institution": "Universidad de Valladolid",
+      "degree": {
+        "en": "BSc in Telecommunications Engineering",
+        "es": "Ingeniero Técnico de Telecomunicaciones"
+      },
+      "period": "2000 - 2008",
+      "thesis": {
+        "en": "Tablet-PC tool for participatory observation in classrooms",
+        "es": "Herramienta Tablet-PC para observación participativa en aulas"
+      },
+      "activities": {
+        "en": "Radio-telecommunications Association, ACM Programming Contest participant (Paris, 2005)",
+        "es": "Asociación de Radio-telecomunicaciones, participante del Concurso de Programación ACM (París, 2005)"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CPSA Foundation Level",
+      "issuer": "iSAQB",
+      "date": "2019"
+    },
+    {
+      "name": "Functional Programming in Kotlin",
+      "issuer": "FunctionalHub",
+      "date": "2018"
+    },
+    {
+      "name": "Kotlin for Java Developers",
+      "issuer": "Coursera",
+      "date": "2018"
+    },
+    {
+      "name": "Android Developer Nanodegree",
+      "issuer": "Google / Udacity",
+      "date": "2017"
+    },
+    {
+      "name": "Functional Programming in Scala",
+      "issuer": "Coursera / EPFL",
+      "date": "2014"
+    },
+    {
+      "name": "Android Apprentice Course",
+      "issuer": "UNED",
+      "date": "2012"
+    },
+    {
+      "name": "First Certificate in English (FCE)",
+      "issuer": "Cambridge English",
+      "date": "2007"
+    }
+  ],
+  "languages": [
+    {
+      "name": { "en": "Spanish", "es": "Español" },
+      "level": { "en": "Native", "es": "Nativo" }
+    },
+    {
+      "name": { "en": "English", "es": "Inglés" },
+      "level": { "en": "Professional working proficiency", "es": "Competencia profesional" }
+    }
+  ],
+  "hobbies": {
+    "en": ["Advanced cuisine & avant-garde cooking", "Technical podcasting", "Functional programming", "Open source"],
+    "es": ["Cocina avanzada y de vanguardia", "Podcasting técnico", "Programación funcional", "Código abierto"]
+  },
+  "podcast": [
+    {
+      "show": "Web Reactiva",
+      "title": {
+        "en": "Software Architecture with Borja Quevedo (WR 121)",
+        "es": "Arquitectura de Software con Borja Quevedo (WR 121)"
+      },
+      "url": "https://www.webreactiva.com/podcast/arquitectura-de-software-con-borja-quevedo",
+      "date": "2020"
+    },
+    {
+      "show": "Web Reactiva",
+      "title": {
+        "en": "Git done right (WR 66)",
+        "es": "Tenemos Git del bueno (WR 66)"
+      },
+      "url": "https://www.danielprimo.io/podcast/66",
+      "date": "2018"
+    },
+    {
+      "show": "Web Reactiva",
+      "title": {
+        "en": "Programming in Kotlin with Borja Quevedo (WR 17)",
+        "es": "Programar en Kotlin con Borja Quevedo (WR 17)"
+      },
+      "url": "https://www.webreactiva.com/podcast/programar-en-kotlin-con-borja-quevedo",
+      "date": "2018"
+    }
+  ],
+  "testimonials": [
+    {
+      "author": "Rodrigo López-Romero Guijarro",
+      "role": {
+        "en": "Agile Expert at adidas",
+        "es": "Agile Expert en adidas"
+      },
+      "quote": {
+        "en": "It's rare that you come across standout talent like Borja. I had the pleasure of working with him for two years and a half side by side at GMV, collaborating on several international projects. I was particularly impressed by his ability to solve all kind of technical tasks being 'ridiculously efficient'. No matter how difficult a problem is, Borja always finds a solution to it. Any company would be lucky to have him on their team; he earns my highest recommendation.",
+        "es": "Es raro encontrar un talento destacado como Borja. Tuve el placer de trabajar con él durante dos años y medio codo con codo en GMV, colaborando en varios proyectos internacionales. Me impresionó especialmente su capacidad para resolver todo tipo de tareas técnicas siendo 'ridículamente eficiente'. No importa lo difícil que sea un problema, Borja siempre encuentra una solución. Cualquier empresa tendría suerte de tenerlo en su equipo; tiene mi más alta recomendación."
+      }
+    }
+  ]
+}

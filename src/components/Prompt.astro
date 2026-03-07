@@ -1,0 +1,17 @@
+---
+interface Props {
+  path?: string;
+  isRoot?: boolean;
+}
+
+const { path = '~', isRoot = false } = Astro.props;
+const user = isRoot ? 'root' : 'borja';
+const host = 'portfolio';
+---
+
+<span class="inline-flex flex-wrap items-center">
+  <span class="text-primary-600 dark:text-primary-400 font-bold">{user}@{host}</span>
+  <span class="text-surface-600 dark:text-surface-400 mx-1">:</span>
+  <span class="text-accent-500 dark:text-accent-300 font-bold">{path}</span>
+  <span class="text-surface-600 dark:text-surface-400 ml-1">{isRoot ? '#' : '$'}</span>
+</span>

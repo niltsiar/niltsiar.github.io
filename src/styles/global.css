@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+
+/* REQUIRED: Enable class-based dark mode in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Aston Martin Racing Green - Primary */
+  --color-primary-50: #edfdf6;
+  --color-primary-100: #d4f9e8;
+  --color-primary-200: #acf2d5;
+  --color-primary-300: #75e6bc;
+  --color-primary-400: #3dd39d;
+  --color-primary-500: #229971;
+  --color-primary-600: #0f9462;
+  --color-primary-700: #0d7650;
+  --color-primary-800: #0e5d41;
+  --color-primary-900: #0d4d37;
+
+  /* Aston Martin Lime Accent */
+  --color-accent-300: #d4f542;
+  --color-accent-400: #c5e030;
+  --color-accent-500: #a8c41a;
+  --color-accent-600: #839b10;
+
+  /* Surface colors - deep terminal darks and clean lights */
+  --color-surface-50: #f4f6f5;
+  --color-surface-100: #e6eae8;
+  --color-surface-200: #cfd6d3;
+  --color-surface-300: #adb9b5;
+  --color-surface-400: #849591;
+  --color-surface-500: #697a76;
+  --color-surface-600: #54625f;
+  --color-surface-700: #46514f;
+  --color-surface-800: #3b4543;
+  --color-surface-900: #1a1f1e;
+  --color-surface-950: #0c0f0e;
+
+  /* Terminal-specific colors */
+  --color-terminal-bg: #0a0d0c;
+  --color-terminal-fg: #229971;
+  --color-terminal-dim: #0d4d37;
+  --color-terminal-cursor: #c5e030;
+  --color-terminal-selection: rgba(34, 153, 113, 0.2);
+  --color-terminal-border: #1a2e28;
+  --color-terminal-header: #111916;
+
+  /* Fonts - JetBrains Mono + Fira Code Nerd */
+  --font-display: 'JetBrains Mono', 'FiraCode Nerd Font', monospace;
+  --font-body: 'JetBrains Mono', 'FiraCode Nerd Font', monospace;
+  --font-mono: 'JetBrains Mono', 'FiraCode Nerd Font', monospace;
+
+  /* Animation timing */
+  --animate-blink: blink 1s step-end infinite;
+  --animate-typewriter: typewriter 2s steps(40) forwards;
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Typewriter text reveal */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* CRT scanline sweep */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Neon glow pulse */
+@keyframes glow {
+  from { text-shadow: 0 0 5px var(--color-primary-500), 0 0 10px var(--color-primary-500); }
+  to { text-shadow: 0 0 10px var(--color-primary-400), 0 0 20px var(--color-primary-400), 0 0 30px var(--color-primary-300); }
+}
+
+/* Gentle float */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Fade-in up animation for scroll reveals */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text scramble decode */
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 0 0); }
+  20% { clip-path: inset(20% 0 60% 0); }
+  40% { clip-path: inset(40% 0 20% 0); }
+  60% { clip-path: inset(60% 0 40% 0); }
+  80% { clip-path: inset(10% 0 80% 0); }
+}
+
+/* Smooth transitions for theme changes */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode scrollbar - terminal style */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-dim);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+/* Light mode scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-terminal-selection);
+  color: var(--color-primary-400);
+}
+
+/* Utility: animate on scroll */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.visible {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Font ligatures for code aesthetic */
+code, pre, .font-mono {
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "liga" 1, "calt" 1;
+}

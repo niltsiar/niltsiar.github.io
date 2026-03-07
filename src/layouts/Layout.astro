@@ -1,0 +1,83 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'es';
+}
+
+const { title, description, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+    <title>{title}</title>
+    
+    <ClientRouter />
+
+    <script is:inline>
+      const initTheme = () => {
+        const theme = (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+          return 'light';
+        })();
+      
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        window.localStorage.setItem('theme', theme || 'light');
+      };
+
+      initTheme();
+
+      document.addEventListener('astro:after-swap', initTheme);
+
+      // Event delegation for theme toggle
+      document.addEventListener('click', function(e) {
+        const themeBtn = e.target.closest('#theme-toggle');
+        if (themeBtn) {
+          const isDark = document.documentElement.classList.contains('dark');
+          if (isDark) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          }
+        }
+      });
+    </script>
+  </head>
+  <body class="font-mono bg-surface-50 text-surface-900 dark:bg-terminal-bg dark:text-terminal-fg min-h-screen selection:bg-terminal-selection selection:text-primary-400">
+    <!-- CRT Overlay Effect for Dark Mode -->
+    <div class="pointer-events-none fixed inset-0 z-50 hidden dark:block" aria-hidden="true">
+      <!-- Scanline -->
+      <div class="h-1 w-full bg-black/10 absolute top-0 animate-[scanline_8s_linear_infinite]"></div>
+      <!-- CRT Flicker/Vignette -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.3)_100%)]"></div>
+      <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.05)_2px,rgba(0,0,0,0.05)_4px)]"></div>
+    </div>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,39 @@
+---
+import profile from '../content/profile.json';
+import { useTranslations } from '../i18n/translations';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="mt-4 font-mono text-sm sm:text-base p-6 border border-surface-200 dark:border-terminal-border bg-surface-100 dark:bg-[#0a0f0d] shadow-sm flex flex-col items-start gap-4">
+  <div class="w-full text-surface-600 dark:text-surface-400 font-bold mb-4 border-b border-surface-300 dark:border-terminal-dim pb-2">
+    #!/bin/bash
+    <br/>
+    # {t('contact.title')}
+  </div>
+  
+  <a href={`mailto:${profile.email}`} class="flex items-center gap-4 group w-full p-2 hover:bg-surface-200 dark:hover:bg-[#15201c] transition-colors rounded">
+    <span class="text-primary-600 dark:text-accent-500 font-bold">$ open</span>
+    <span class="text-surface-800 dark:text-primary-300 group-hover:text-primary-600 dark:group-hover:text-white transition-colors">{profile.email}</span>
+  </a>
+  
+  <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group w-full p-2 hover:bg-surface-200 dark:hover:bg-[#15201c] transition-colors rounded">
+    <span class="text-primary-600 dark:text-accent-500 font-bold">$ open</span>
+    <span class="text-surface-800 dark:text-primary-300 group-hover:text-primary-600 dark:group-hover:text-white transition-colors">linkedin.com/in/bquepab</span>
+  </a>
+  
+  <a href={profile.github.url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group w-full p-2 hover:bg-surface-200 dark:hover:bg-[#15201c] transition-colors rounded">
+    <span class="text-primary-600 dark:text-accent-500 font-bold">$ open</span>
+    <span class="text-surface-800 dark:text-primary-300 group-hover:text-primary-600 dark:group-hover:text-white transition-colors">github.com/niltsiar</span>
+  </a>
+  
+  <a href={profile.mastodon} target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group w-full p-2 hover:bg-surface-200 dark:hover:bg-[#15201c] transition-colors rounded">
+    <span class="text-primary-600 dark:text-accent-500 font-bold">$ open</span>
+    <span class="text-surface-800 dark:text-primary-300 group-hover:text-primary-600 dark:group-hover:text-white transition-colors">androiddev.social/@niltsiar</span>
+  </a>
+</div>

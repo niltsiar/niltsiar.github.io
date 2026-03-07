@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import profile from '../../content/profile.json';
+import { useTranslations } from '../../i18n/translations';
+
+import TerminalWindow from '../../components/TerminalWindow.astro';
+import TerminalNav from '../../components/TerminalNav.astro';
+import TerminalFooter from '../../components/TerminalFooter.astro';
+import Command from '../../components/Command.astro';
+
+import Whoami from '../../components/Whoami.astro';
+import CatResume from '../../components/CatResume.astro';
+import LsSkills from '../../components/LsSkills.astro';
+import History from '../../components/History.astro';
+import Contact from '../../components/Contact.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import Podcast from '../../components/Podcast.astro';
+
+const lang = 'es';
+---
+
+<Layout title={`${profile.name} - ${profile.headline[lang]}`} description={profile.description[lang]} lang={lang}>
+  <main class="min-h-screen py-8 sm:py-16 px-4 flex justify-center w-full">
+    <TerminalWindow title={`borja@portfolio: ~`}>
+      <TerminalNav lang={lang} />
+      
+      <section id="about" class="mb-16 scroll-mt-24">
+        <Command cmd="whoami" delay={0}>
+          <Whoami lang={lang} />
+        </Command>
+
+        <Command cmd="cat resume.txt" delay={800} id="resume">
+          <CatResume lang={lang} />
+        </Command>
+      </section>
+
+      <section id="experience" class="mb-16 scroll-mt-24">
+        <Command cmd="history | grep experience" delay={1200}>
+          <History lang={lang} type="experience" />
+        </Command>
+      </section>
+
+      <section id="projects" class="mb-16 scroll-mt-24">
+        <Command cmd="ls -l ./projects" delay={1600}>
+          <History lang={lang} type="projects" />
+        </Command>
+      </section>
+
+      <section id="skills" class="mb-16 scroll-mt-24">
+        <Command cmd="ls -R ./skills" delay={2000}>
+          <LsSkills lang={lang} />
+        </Command>
+      </section>
+
+      <section id="testimonials" class="mb-16 scroll-mt-24">
+        <Command cmd="cat testimonials.log" delay={2400}>
+          <Testimonials lang={lang} />
+        </Command>
+      </section>
+
+      <section id="podcast" class="mb-16 scroll-mt-24">
+        <Command cmd="cat /var/log/podcast.log" delay={2800}>
+          <Podcast lang={lang} />
+        </Command>
+      </section>
+
+      <section id="contact" class="mb-8 scroll-mt-24">
+        <Command cmd="./contact.sh" delay={3200}>
+          <Contact lang={lang} />
+        </Command>
+      </section>
+
+      <TerminalFooter lang={lang} />
+    </TerminalWindow>
+  </main>
+</Layout>

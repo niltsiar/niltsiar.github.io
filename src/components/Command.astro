@@ -1,0 +1,29 @@
+---
+import Prompt from './Prompt.astro';
+
+interface Props {
+  cmd: string;
+  path?: string;
+  isRoot?: boolean;
+  delay?: number;
+  id?: string;
+}
+
+const { cmd, path = '~', isRoot = false, delay = 0, id } = Astro.props;
+---
+
+<div class="mb-6 group" id={id}>
+  <div class="flex items-center flex-wrap gap-2 text-sm sm:text-base">
+    <Prompt path={path} isRoot={isRoot} />
+    <div class="inline-block overflow-hidden whitespace-nowrap animate-typewriter" style={`animation-delay: ${delay}ms`}>
+      <span class="text-surface-900 dark:text-terminal-fg font-bold pr-1 border-r-2 border-transparent dark:border-terminal-cursor dark:animate-blink">
+        {cmd}
+      </span>
+    </div>
+  </div>
+  <div class="mt-3 text-surface-700 dark:text-surface-300 ml-4 border-l-2 border-surface-200 dark:border-surface-800 pl-4 opacity-0 animate-[fadeInUp_0.4s_ease-out_forwards]" style={`animation-delay: ${delay + 600}ms`}>
+    <slot />
+  </div>
+</div>
+
+
