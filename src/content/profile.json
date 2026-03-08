@@ -69,8 +69,8 @@
         "es": "10 años"
       },
       "description": {
-        "en": "Led mobile development across high-impact projects: the award-winning SATELISE satellite tolling system, Covclear COVID-19 office access management, C-ROADS V2X vehicle communication for the EU, URBAN GreenUP citizen science for Horizon 2020, and EUROPORT logistics for ESA. Also served as internal Git trainer for the company.",
-        "es": "Líder del desarrollo móvil en proyectos de alto impacto: el galardonado sistema de peaje por satélite SATELISE, la gestión de acceso a oficinas CovClear durante el COVID-19, comunicación V2X C-ROADS para la UE, ciencia ciudadana URBAN GreenUP para Horizon 2020, y logística EUROPORT para la ESA. También formador interno de Git para la empresa."
+        "en": "Led mobile development across high-impact projects: the award-winning SATELISE satellite tolling system, Galileo Green Lane COVID-19 freight monitoring for EUSPA, Covclear office access management, C-ROADS V2X vehicle communication for the EU, URBAN GreenUP citizen science for Horizon 2020, and EUROPORT logistics for ESA. Also served as internal Git trainer for the company.",
+        "es": "Líder del desarrollo móvil en proyectos de alto impacto: el galardonado sistema de peaje por satélite SATELISE, monitorización de transporte de mercancías Galileo Green Lane para EUSPA, gestión de acceso a oficinas CovClear, comunicación V2X C-ROADS para la UE, ciencia ciudadana URBAN GreenUP para Horizon 2020, y logística EUROPORT para la ESA. También formador interno de Git para la empresa."
       },
       "current": false
     },
@@ -142,6 +142,16 @@
       "url_es": "https://satelise.com/es"
     },
     {
+      "name": "Galileo Green Lane",
+      "description": {
+        "en": "Android app for COVID-19 freight border monitoring under the EU Galileo programme — enabling truck drivers to report border crossing wait times using GNSS positioning, helping the European Commission keep supply chains moving during the pandemic.",
+        "es": "Aplicación Android para la monitorización de fronteras de transporte de mercancías durante el COVID-19 dentro del programa EU Galileo — permitiendo a los conductores de camiones informar de los tiempos de espera en cruces fronterizos usando posicionamiento GNSS, ayudando a la Comisión Europea a mantener las cadenas de suministro durante la pandemia."
+      },
+      "skills": ["Android", "Kotlin", "GNSS", "Galileo"],
+      "period": "2020 - 2022",
+      "url": "https://galileogreenlane.eu"
+    },
+    {
       "name": "Covclear",
       "description": {
         "en": "Enterprise COVID-19 office access management app — daily health screening, QR-based access control, internal contact tracing, and real-time occupancy monitoring. Built internally at GMV for a safe return to the office.",
@@ -184,6 +194,17 @@
       "url": "https://business.esa.int/projects/europort"
     },
     {
+      "name": "ERS (EFCA)",
+      "description": {
+        "en": "Electronic Recording and Reporting System for the European Fisheries Control Agency — backend platform processing fishing vessel data, catch quotas, and logbook entries across the EU fleet.",
+        "es": "Sistema Electrónico de Registro e Informe para la Agencia Europea de Control de la Pesca — plataforma backend para el procesamiento de datos de buques pesqueros, cuotas de captura y entradas de diario a bordo en toda la flota de la UE."
+      },
+      "skills": ["Java", "Spring Framework", "JavaScript"],
+      "period": "2011 - 2012",
+      "url": "https://www.efca.europa.eu",
+      "url_es": "https://www.efca.europa.eu/es"
+    },
+    {
       "name": "ShipLocus",
       "description": {
         "en": "Core modules for GMV's flagship maritime traffic management platform — real-time AIS vessel tracking, radar integration, and traffic density analysis for the Spanish National AIS Network (Puertos del Estado) and Port of Santa Cruz de Tenerife.",
@@ -196,8 +217,9 @@
     }
   ],
   "skills": {
-    "main": ["Kotlin", "Android", "Java"],
+    "main": ["Kotlin", "Android"],
     "mobile": ["Android SDK", "Jetpack Compose", "Kotlin Multiplatform"],
+    "backend": ["Java", "Spring Framework", "C#", ".NET"],
     "architecture": ["Clean Architecture", "MVVM", "Software Architecture (CPSA)"],
     "tools": ["Git", "Gradle", "CI/CD", "Linux"]
   },

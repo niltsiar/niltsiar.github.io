@@ -12,6 +12,7 @@ const t = useTranslations(lang);
 const categoryLabels: Record<string, Record<string, string>> = {
   main: { en: 'Core', es: 'Principal' },
   mobile: { en: 'Mobile', es: 'Móvil' },
+  backend: { en: 'Backend', es: 'Backend' },
   architecture: { en: 'Architecture', es: 'Arquitectura' },
   tools: { en: 'Tools', es: 'Herramientas' },
 };
@@ -28,9 +29,9 @@ const skillEntries = Object.entries(profile.skills) as [string, string[]][];
     </h2>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-3 border-surface-900 dark:border-terminal-border">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-0 sm:border-3 sm:border-surface-900 dark:sm:border-terminal-border">
     {skillEntries.map(([category, skills], index) => (
-      <div class={`p-6 sm:p-8 ${index < skillEntries.length - 1 ? 'border-b-3 sm:border-b-0 sm:border-r-3 border-surface-900 dark:border-terminal-border' : ''}`}>
+      <div class="p-6 sm:p-8 border-3 sm:border-0 sm:border-b-3 sm:border-r-3 border-surface-900 dark:border-terminal-border">
         <h3 class="font-display text-xs uppercase tracking-widest font-bold text-primary-600 dark:text-primary-400 mb-4 pb-2 border-b-2 border-surface-300 dark:border-terminal-border">
           {categoryLabels[category]?.[lang] || category}
         </h3>
