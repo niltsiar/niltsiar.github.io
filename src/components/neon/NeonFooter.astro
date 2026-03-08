@@ -12,12 +12,12 @@ const year = new Date().getFullYear();
 
 <footer class="relative border-t border-primary-500/20 dark:border-primary-500/30 bg-surface-50/50 dark:bg-terminal-bg/80 backdrop-blur-sm">
   <!-- Neon glow line at top -->
-  <div class="absolute top-0 left-0 right-0 h-px bg-primary-500/40 shadow-[0_0_8px_color-mix(in_srgb,var(--color-primary-500)_30%,transparent)]" aria-hidden="true"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-primary-500/40 dark:bg-primary-500/60 shadow-[0_0_8px_color-mix(in_srgb,var(--color-primary-500)_30%,transparent)] dark:shadow-[0_0_14px_color-mix(in_srgb,var(--color-primary-500)_50%,transparent)]" aria-hidden="true"></div>
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-surface-500 dark:text-surface-400">
       <p>
-        {t('footer.made')} <span class="text-orange-500">🧡</span> {t('footer.and')} <a href="https://webreactiva.com" target="_blank" rel="noopener noreferrer" class="text-primary-600 dark:text-primary-400 hover:[text-shadow:0_0_8px_color-mix(in_srgb,var(--color-primary-500)_40%,transparent)] transition-all duration-300 underline decoration-primary-500/30 hover:decoration-primary-500/60 underline-offset-2">Web Reactiva</a>
+        {t('footer.made')} <span class="text-orange-500">🧡</span> {t('footer.and')} <a href="https://webreactiva.com" target="_blank" rel="noopener noreferrer" class="text-primary-600 dark:text-primary-400 hover:[text-shadow:0_0_8px_color-mix(in_srgb,var(--color-primary-500)_40%,transparent)] dark:hover:[text-shadow:0_0_12px_color-mix(in_srgb,var(--color-primary-500)_60%,transparent)] transition-all duration-300 underline decoration-primary-500/30 hover:decoration-primary-500/60 underline-offset-2">Web Reactiva</a>
       </p>
       <p>&copy; {year} Borja Quevedo. {t('footer.rights')}</p>
     </div>
