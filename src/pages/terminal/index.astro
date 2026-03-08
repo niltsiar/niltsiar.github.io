@@ -28,7 +28,7 @@ const lang = 'en';
           <Whoami lang={lang} />
         </Command>
 
-        <Command cmd="cat resume.txt" delay={800} id="resume">
+        <Command cmd="cat resume.md" delay={800} id="resume">
           <CatResume lang={lang} />
         </Command>
       </section>
@@ -40,7 +40,7 @@ const lang = 'en';
       </section>
 
       <section id="projects" class="mb-16 scroll-mt-24">
-        <Command cmd="ls -l ./projects" delay={1600}>
+        <Command cmd="git log ./projects" delay={1600}>
           <History lang={lang} type="projects" />
         </Command>
       </section>
@@ -52,13 +52,13 @@ const lang = 'en';
       </section>
 
       <section id="testimonials" class="mb-16 scroll-mt-24">
-        <Command cmd="cat testimonials.log" delay={2400}>
+        <Command cmd="cat testimonials.md" delay={2400}>
           <Testimonials lang={lang} />
         </Command>
       </section>
 
       <section id="community" class="mb-16 scroll-mt-24">
-        <Command cmd="cat /var/log/community.log" delay={2800}>
+        <Command cmd="cat community.md" delay={2800}>
           <Podcast lang={lang} />
         </Command>
       </section>
