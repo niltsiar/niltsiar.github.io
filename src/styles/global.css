@@ -143,7 +143,8 @@
   --color-terminal-chrome: #3e2a18;
 }
 
-/* Ferrari Rosso Corsa — Brutalist Design Palette */
+/* Ferrari Rosso Corsa — Brutalist Design Palette
+   Warm cream/ivory surfaces + Giallo Modena yellow accent */
 .palette-ferrari {
   --color-primary-50: #fef2f2;
   --color-primary-100: #fee2e2;
@@ -161,30 +162,29 @@
   --color-accent-500: #eab308;
   --color-accent-600: #ca8a04;
 
-  --color-surface-50: #fafafa;
-  --color-surface-100: #f4f4f5;
-  --color-surface-200: #e4e4e7;
-  --color-surface-300: #d4d4d8;
-  --color-surface-400: #a1a1aa;
-  --color-surface-500: #71717a;
-  --color-surface-600: #52525b;
-  --color-surface-700: #3f3f46;
-  --color-surface-800: #27272a;
-  --color-surface-900: #18181b;
-  --color-surface-950: #09090b;
+  --color-surface-50: #fffaf5;
+  --color-surface-100: #f7f0e8;
+  --color-surface-200: #ede3d8;
+  --color-surface-300: #ddd0c3;
+  --color-surface-400: #b0a090;
+  --color-surface-500: #7a6e62;
+  --color-surface-600: #5c524a;
+  --color-surface-700: #46403b;
+  --color-surface-800: #2a2623;
+  --color-surface-900: #1a1715;
+  --color-surface-950: #0c0a09;
 
-  --color-terminal-bg: #0a0a0a;
+  --color-terminal-bg: #0c0a09;
   --color-terminal-fg: #ef1a2d;
   --color-terminal-dim: #7f1d1d;
   --color-terminal-cursor: #facc15;
   --color-terminal-selection: rgba(239, 26, 45, 0.2);
-  --color-terminal-border: #2a1010;
-  --color-terminal-header: #141010;
-  --color-terminal-hover: #1c1010;
-  --color-terminal-chrome: #3a1818;
+  --color-terminal-border: #2e1a10;
+  --color-terminal-header: #171210;
+  --color-terminal-hover: #1e1814;
+  --color-terminal-chrome: #3e2e22;
 }
 
-/* Real Valladolid Purple — Brutalist Design Palette */
 .palette-valladolid {
   --color-primary-50: #fdf4ff;
   --color-primary-100: #fae8ff;
@@ -197,32 +197,32 @@
   --color-primary-800: #581151;
   --color-primary-900: #460d3f;
 
-  --color-accent-300: #fef08a;
-  --color-accent-400: #f4e423;
-  --color-accent-500: #dfd015;
-  --color-accent-600: #b8a90e;
+  --color-accent-300: #c0c8d4;
+  --color-accent-400: #8d99a8;
+  --color-accent-500: #6b7a8d;
+  --color-accent-600: #546375;
 
-  --color-surface-50: #fafafa;
-  --color-surface-100: #f4f4f5;
-  --color-surface-200: #e4e4e7;
-  --color-surface-300: #d4d4d8;
-  --color-surface-400: #a1a1aa;
-  --color-surface-500: #71717a;
-  --color-surface-600: #52525b;
-  --color-surface-700: #3f3f46;
-  --color-surface-800: #27272a;
-  --color-surface-900: #18181b;
-  --color-surface-950: #09090b;
+  --color-surface-50: #f9f5ff;
+  --color-surface-100: #f0eaf8;
+  --color-surface-200: #e2d9f0;
+  --color-surface-300: #d0c3e0;
+  --color-surface-400: #a090b0;
+  --color-surface-500: #736280;
+  --color-surface-600: #574a65;
+  --color-surface-700: #433950;
+  --color-surface-800: #2a2433;
+  --color-surface-900: #1a161f;
+  --color-surface-950: #0c0a10;
 
-  --color-terminal-bg: #0a080a;
+  --color-terminal-bg: #0c0a10;
   --color-terminal-fg: #c026d3;
   --color-terminal-dim: #460d3f;
-  --color-terminal-cursor: #f4e423;
+  --color-terminal-cursor: #8d99a8;
   --color-terminal-selection: rgba(146, 27, 136, 0.2);
-  --color-terminal-border: #261028;
-  --color-terminal-header: #140a14;
-  --color-terminal-hover: #1c0e1c;
-  --color-terminal-chrome: #381a38;
+  --color-terminal-border: #28203a;
+  --color-terminal-header: #16101e;
+  --color-terminal-hover: #1e1628;
+  --color-terminal-chrome: #382a4a;
 }
 
 /* Cyberpunk Purple — Neon Dream Design Palette */
