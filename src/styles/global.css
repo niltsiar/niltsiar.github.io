@@ -143,23 +143,23 @@
   --color-terminal-chrome: #3e2a18;
 }
 
-/* Ferrari — Rosso Corsa (#DC0000) + Giallo Modena (#F6E500 adapted) */
+/* Ferrari — Rosso Corsa accent (#DC0000) + Giallo Modena labels (#F6E500 adapted) */
 .palette-ferrari {
-  --color-primary-50: #fef2f2;
-  --color-primary-100: #fee2e2;
-  --color-primary-200: #fecaca;
-  --color-primary-300: #fca5a5;
-  --color-primary-400: #ef4444;
-  --color-primary-500: #DC0000;
-  --color-primary-600: #b91c1c;
-  --color-primary-700: #991b1b;
-  --color-primary-800: #7f1d1d;
-  --color-primary-900: #641414;
+  --color-primary-50: #fefcf0;
+  --color-primary-100: #fdf6d8;
+  --color-primary-200: #f9eab2;
+  --color-primary-300: #f2d87a;
+  --color-primary-400: #d9c420;
+  --color-primary-500: #a89818;
+  --color-primary-600: #8a6d10;
+  --color-primary-700: #705810;
+  --color-primary-800: #584510;
+  --color-primary-900: #403210;
 
-  --color-accent-300: #f9e45c;
-  --color-accent-400: #d9c420;
-  --color-accent-500: #8a6d10;
-  --color-accent-600: #705810;
+  --color-accent-300: #fca5a5;
+  --color-accent-400: #ef4444;
+  --color-accent-500: #DC0000;
+  --color-accent-600: #b91c1c;
 
   --color-surface-50: #fffbfb;
   --color-surface-100: #f7f3f2;
