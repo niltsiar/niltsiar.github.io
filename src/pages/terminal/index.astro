@@ -40,7 +40,7 @@ const lang = 'en';
       </section>
 
       <section id="projects" class="mb-16 scroll-mt-24">
-        <Command cmd="git log ./projects" delay={1600}>
+        <Command cmd={`git log --graph --branches="projects/*"`} delay={1600}>
           <History lang={lang} type="projects" />
         </Command>
       </section>
