@@ -16,7 +16,7 @@ const navLinks = [
   { href: '#contact', label: t('nav.contact') },
 ];
 
-const langSwitchHref = lang === 'en' ? '/neon/es/' : '/neon/';
+const langSwitchHref = lang === 'en' ? '/es/' : '/';
 const langSwitchLabel = lang === 'en' ? 'ES' : 'EN';
 ---
 
@@ -24,7 +24,7 @@ const langSwitchLabel = lang === 'en' ? 'ES' : 'EN';
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-16">
       <!-- Logo / Home -->
-      <a href={lang === 'en' ? '/neon/' : '/neon/es/'} class="font-display font-bold text-lg text-primary-600 dark:text-primary-400 [text-shadow:0_0_8px_color-mix(in_srgb,var(--color-primary-500)_40%,transparent)] dark:[text-shadow:0_0_12px_color-mix(in_srgb,var(--color-primary-500)_60%,transparent)] hover:[text-shadow:0_0_16px_color-mix(in_srgb,var(--color-primary-400)_60%,transparent)] dark:hover:[text-shadow:0_0_20px_color-mix(in_srgb,var(--color-primary-400)_80%,transparent)] transition-all duration-300" >
+      <a href={lang === 'en' ? '/' : '/es/'} class="font-display font-bold text-lg text-primary-600 dark:text-primary-400 [text-shadow:0_0_8px_color-mix(in_srgb,var(--color-primary-500)_40%,transparent)] dark:[text-shadow:0_0_12px_color-mix(in_srgb,var(--color-primary-500)_60%,transparent)] hover:[text-shadow:0_0_16px_color-mix(in_srgb,var(--color-primary-400)_60%,transparent)] dark:hover:[text-shadow:0_0_20px_color-mix(in_srgb,var(--color-primary-400)_80%,transparent)] transition-all duration-300" >
         BQ<span class="inline-block w-[2px] h-[1em] bg-primary-500 dark:bg-primary-400 ml-0.5 animate-[blink_1s_steps(2,start)_infinite] align-middle" aria-hidden="true"></span>
       </a>
 

@@ -85,8 +85,12 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
         }
       };
 
+      var currentDesign = '';
+
       const cleanUrl = () => {
         var path = window.location.pathname;
+        var m = path.match(/^\/(terminal|brutalist|neon)/);
+        if (m) currentDesign = m[1];
         var clean = path.replace(/^\/(terminal|brutalist|neon)/, '');
         if (clean === '') clean = '/';
         if (path !== clean) {
@@ -105,6 +109,17 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
         if (!link) return;
         var h = link.getAttribute('href');
         if (!h || !h.startsWith('/')) return;
+
+        // Inject design slug into clean root paths (/ → /terminal/, /es/ → /terminal/es/)
+        if (currentDesign && !h.match(/^\/(terminal|brutalist|neon)\//)) {
+          if (h === '/' || h.startsWith('/?')) {
+            h = '/' + currentDesign + '/' + h.substring(1);
+            link.setAttribute('href', h);
+          } else if (h === '/es/' || h.startsWith('/es/?')) {
+            h = '/' + currentDesign + h;
+            link.setAttribute('href', h);
+          }
+        }
 
         if (window.location.search.includes('dev') && !h.includes('dev')) {
           link.setAttribute('href', h + (h.includes('?') ? '&dev' : '?dev'));
