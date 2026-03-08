@@ -143,84 +143,86 @@
   --color-terminal-chrome: #3e2a18;
 }
 
+/* Ferrari — Rosso Corsa (#DC0000) + Giallo Modena (#F6E500 adapted) */
 .palette-ferrari {
   --color-primary-50: #fef2f2;
   --color-primary-100: #fee2e2;
   --color-primary-200: #fecaca;
   --color-primary-300: #fca5a5;
-  --color-primary-400: #f87171;
-  --color-primary-500: #ef1a2d;
-  --color-primary-600: #dc2626;
-  --color-primary-700: #b91c1c;
-  --color-primary-800: #991b1b;
-  --color-primary-900: #7f1d1d;
+  --color-primary-400: #ef4444;
+  --color-primary-500: #DC0000;
+  --color-primary-600: #b91c1c;
+  --color-primary-700: #991b1b;
+  --color-primary-800: #7f1d1d;
+  --color-primary-900: #641414;
 
-  --color-accent-300: #fcd34d;
-  --color-accent-400: #f59e0b;
-  --color-accent-500: #d97706;
-  --color-accent-600: #b45309;
+  --color-accent-300: #f9e45c;
+  --color-accent-400: #d9c420;
+  --color-accent-500: #8a6d10;
+  --color-accent-600: #705810;
 
-  --color-surface-50: #fffaf5;
-  --color-surface-100: #f7f0e8;
-  --color-surface-200: #ede3d8;
-  --color-surface-300: #ddd0c3;
-  --color-surface-400: #b0a090;
-  --color-surface-500: #7a6e62;
-  --color-surface-600: #5c524a;
-  --color-surface-700: #46403b;
-  --color-surface-800: #302822;
-  --color-surface-900: #1e1814;
-  --color-surface-950: #120e0b;
+  --color-surface-50: #fffbfb;
+  --color-surface-100: #f7f3f2;
+  --color-surface-200: #ede8e6;
+  --color-surface-300: #ddd6d4;
+  --color-surface-400: #b5aaa6;
+  --color-surface-500: #7d7472;
+  --color-surface-600: #5e5654;
+  --color-surface-700: #454040;
+  --color-surface-800: #2c2828;
+  --color-surface-900: #1c1918;
+  --color-surface-950: #141214;
 
-  --color-terminal-bg: #1a1412;
-  --color-terminal-fg: #f87171;
-  --color-terminal-dim: #991b1b;
-  --color-terminal-cursor: #f59e0b;
-  --color-terminal-selection: rgba(239, 26, 45, 0.15);
-  --color-terminal-border: #382a20;
-  --color-terminal-header: #211a16;
-  --color-terminal-hover: #2a2018;
-  --color-terminal-chrome: #4a3828;
+  --color-terminal-bg: #141214;
+  --color-terminal-fg: #ef4444;
+  --color-terminal-dim: #7f1d1d;
+  --color-terminal-cursor: #facc15;
+  --color-terminal-selection: rgba(220, 0, 0, 0.15);
+  --color-terminal-border: #2a2426;
+  --color-terminal-header: #1c1a1a;
+  --color-terminal-hover: #242020;
+  --color-terminal-chrome: #383234;
 }
 
+/* Valladolid — Violeta Pucela (#63257E from realvalladolid.es) + Crown Gold */
 .palette-valladolid {
-  --color-primary-50: #fdf4ff;
-  --color-primary-100: #fae8ff;
-  --color-primary-200: #f5d0fe;
-  --color-primary-300: #e879f9;
-  --color-primary-400: #c026d3;
-  --color-primary-500: #921b88;
-  --color-primary-600: #7e1a77;
-  --color-primary-700: #6b1564;
-  --color-primary-800: #581151;
-  --color-primary-900: #460d3f;
+  --color-primary-50: #faf7fc;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e0ccf5;
+  --color-primary-300: #c49fe0;
+  --color-primary-400: #a87cc5;
+  --color-primary-500: #63257E;
+  --color-primary-600: #501968;
+  --color-primary-700: #3f1252;
+  --color-primary-800: #2e0d3d;
+  --color-primary-900: #200929;
 
-  --color-accent-300: #5eead4;
-  --color-accent-400: #2dd4bf;
-  --color-accent-500: #14b8a6;
-  --color-accent-600: #0d9488;
+  --color-accent-300: #e8c97a;
+  --color-accent-400: #c9a84d;
+  --color-accent-500: #7d6528;
+  --color-accent-600: #6b5425;
 
-  --color-surface-50: #f9f5ff;
-  --color-surface-100: #f0eaf8;
-  --color-surface-200: #e2d9f0;
-  --color-surface-300: #d0c3e0;
-  --color-surface-400: #a090b0;
-  --color-surface-500: #736280;
-  --color-surface-600: #574a65;
-  --color-surface-700: #433950;
-  --color-surface-800: #2a2433;
-  --color-surface-900: #1a161f;
-  --color-surface-950: #0c0a10;
+  --color-surface-50: #faf7fc;
+  --color-surface-100: #f2edf6;
+  --color-surface-200: #e4dcec;
+  --color-surface-300: #d0c5dc;
+  --color-surface-400: #a498b2;
+  --color-surface-500: #756880;
+  --color-surface-600: #594e65;
+  --color-surface-700: #433a50;
+  --color-surface-800: #2c2536;
+  --color-surface-900: #1c1824;
+  --color-surface-950: #0e0c14;
 
-  --color-terminal-bg: #110e18;
-  --color-terminal-fg: #c026d3;
-  --color-terminal-dim: #581151;
-  --color-terminal-cursor: #2dd4bf;
-  --color-terminal-selection: rgba(146, 27, 136, 0.15);
-  --color-terminal-border: #2e2242;
-  --color-terminal-header: #1a1426;
-  --color-terminal-hover: #221a30;
-  --color-terminal-chrome: #3e2e52;
+  --color-terminal-bg: #0e0c14;
+  --color-terminal-fg: #a87cc5;
+  --color-terminal-dim: #501968;
+  --color-terminal-cursor: #c9a84d;
+  --color-terminal-selection: rgba(99, 37, 126, 0.15);
+  --color-terminal-border: #261e32;
+  --color-terminal-header: #181220;
+  --color-terminal-hover: #201828;
+  --color-terminal-chrome: #342848;
 }
 
 /* Cyberpunk Purple — Neon Dream Design Palette */
