@@ -15,7 +15,7 @@ const { cmd, path = '~', isRoot = false, delay = 0, id } = Astro.props;
 <div class="mb-6 group" id={id}>
   <div class="flex items-center flex-wrap gap-2 text-sm sm:text-base">
     <Prompt path={path} isRoot={isRoot} />
-    <div class="inline-block overflow-hidden whitespace-nowrap animate-typewriter" style={`animation-delay: ${delay}ms`}>
+    <div class="inline-block overflow-hidden whitespace-nowrap w-max animate-typewriter" style={`animation-delay: ${delay}ms`}>
       <span class="text-surface-900 dark:text-terminal-fg font-bold pr-1 border-r-2 border-transparent dark:border-terminal-cursor dark:animate-blink">
         {cmd}
       </span>
