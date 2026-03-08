@@ -145,27 +145,25 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
 
       document.addEventListener('astro:after-swap', () => { initTheme(); initPalette(); cleanUrl(); initFavicon(); });
 
-      document.addEventListener('click', function(e) {
-        var link = e.target.closest('a[href]');
-        if (!link) return;
-        var h = link.getAttribute('href');
-        if (!h || !h.startsWith('/')) return;
+      // Inject design slug + ?dev at navigation level (not on DOM href)
+      // so Chrome's link preview never shows /terminal/, /brutalist/, /neon/
+      document.addEventListener('astro:before-preparation', function(ev) {
+        var path = ev.to.pathname;
 
-        // Inject design slug into clean root paths (/ → /terminal/, /es/ → /terminal/es/)
-        if (currentDesign && !h.match(/^\/(terminal|brutalist|neon)\//)) {
-          if (h === '/' || h.startsWith('/?')) {
-            h = '/' + currentDesign + '/' + h.substring(1);
-            link.setAttribute('href', h);
-          } else if (h === '/es/' || h.startsWith('/es/?')) {
-            h = '/' + currentDesign + h;
-            link.setAttribute('href', h);
+        // Inject design slug (skip explicit design paths and dispatcher links)
+        if (currentDesign && !path.match(/^\/(terminal|brutalist|neon)/) && !ev.to.search.includes('design=')) {
+          if (path === '/' || path === '') {
+            ev.to.pathname = '/' + currentDesign + '/';
+          } else if (path === '/es/' || path === '/es') {
+            ev.to.pathname = '/' + currentDesign + '/es/';
           }
         }
 
-        if (window.location.search.includes('dev') && !h.includes('dev')) {
-          link.setAttribute('href', h + (h.includes('?') ? '&dev' : '?dev'));
+        // Forward ?dev
+        if (window.location.search.includes('dev') && !ev.to.search.includes('dev')) {
+          ev.to.search = ev.to.search ? ev.to.search + '&dev' : '?dev';
         }
-      }, true);
+      });
 
       document.addEventListener('click', function(e) {
         const themeBtn = e.target.closest('#theme-toggle');
