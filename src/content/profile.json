@@ -138,7 +138,8 @@
       },
       "skills": ["Android", "iOS", "GNSS", "DGT Integration"],
       "period": "2015 - 2022",
-      "url": "https://satelise.com"
+      "url": "https://satelise.com",
+      "url_es": "https://satelise.com/es"
     },
     {
       "name": "Covclear",
@@ -148,7 +149,8 @@
       },
       "skills": ["Android", "Kotlin", "Security", "GDPR"],
       "period": "2020 - 2021",
-      "url": "https://www.gmv.com/en/communication/press-room/press-releases/gmv-creates-mobile-app-ensure-safer-return-work"
+      "url": "https://www.gmv.com/en/communication/press-room/press-releases/gmv-creates-mobile-app-ensure-safer-return-work",
+      "url_es": "https://www.gmv.com/es-es/comunicacion/noticias/gmv-crea-una-app-movil-para-una-reincorporacion-mas-segura-al-trabajo"
     },
     {
       "name": "C-ROADS V2X",
@@ -168,7 +170,8 @@
       },
       "skills": ["Android", "Geolocation", "Citizen Science"],
       "period": "2018 - 2020",
-      "url": "https://www.urbangreenup.eu"
+      "url": "https://www.urbangreenup.eu",
+      "url_es": "https://www.urbangreenup.eu/valladolid/valladolid.kl"
     },
     {
       "name": "EUROPORT",
@@ -188,7 +191,8 @@
       },
       "skills": [".NET", "AIS", "GIS", "Real-time"],
       "period": "2009 - 2012",
-      "url": "https://www.gmv.com/en/products/defense-and-security/shiplocus"
+      "url": "https://www.gmv.com/en/products/defense-and-security/shiplocus",
+      "url_es": "https://www.gmv.com/es-es/productos/defensa-y-seguridad/shiplocus"
     }
   ],
   "skills": {

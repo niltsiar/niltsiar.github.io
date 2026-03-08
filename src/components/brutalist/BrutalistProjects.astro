@@ -44,7 +44,7 @@ const t = useTranslations(lang);
 
           {project.url && (
             <a
-              href={project.url}
+              href={project.url_es && lang === 'es' ? project.url_es : project.url}
               target="_blank"
               rel="noopener noreferrer"
               class="mt-4 inline-flex items-center gap-2 font-display text-xs uppercase tracking-widest font-bold text-accent-500 dark:text-accent-400 hover:text-surface-900 dark:hover:text-terminal-fg border-b-2 border-accent-500 dark:border-accent-400 self-start"
