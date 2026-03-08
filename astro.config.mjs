@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 
 export default defineConfig({
+  site: 'https://borja.quevedo.dev',
   compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
