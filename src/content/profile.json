@@ -144,12 +144,13 @@
     {
       "name": "Galileo Green Lane",
       "description": {
-        "en": "Android app for COVID-19 freight border monitoring under the EU Galileo programme — enabling truck drivers to report border crossing wait times using GNSS positioning, helping the European Commission keep supply chains moving during the pandemic.",
-        "es": "Aplicación Android para la monitorización de fronteras de transporte de mercancías durante el COVID-19 dentro del programa EU Galileo — permitiendo a los conductores de camiones informar de los tiempos de espera en cruces fronterizos usando posicionamiento GNSS, ayudando a la Comisión Europea a mantener las cadenas de suministro durante la pandemia."
+        "en": "Enhanced iteration of the EU Galileo Green Lane platform — Kotlin-based mobile apps for real-time freight border monitoring using Galileo GNSS. Developed for EUSPA, later evolved into Solidarity Lanes supporting Ukraine logistics during the conflict.",
+        "es": "Iteración mejorada de la plataforma EU Galileo Green Lane — apps móviles en Kotlin para la monitorización en tiempo real de fronteras de mercancías usando Galileo GNSS. Desarrollada para EUSPA, evolucionó a Solidarity Lanes apoyando la logística con Ucrania durante el conflicto."
       },
       "skills": ["Android", "Kotlin", "GNSS", "Galileo"],
       "period": "2020 - 2022",
-      "url": "https://www.euspa.europa.eu/pressroom/press-releases/galileo-green-lane-easing-pressure-eus-internal-borders"
+      "url": "https://www.gmv.com/en-es/media/blog/automotive/galileo-green-lane-european-digital-platform-smart-solidarity-based-logistics",
+      "url_es": "https://www.gmv.com/es-es/media/blog/automocion/galileo-green-lane-plataforma-digital-europea-logistica-inteligente-solidaria"
     },
     {
       "name": "Covclear",
