@@ -315,11 +315,40 @@
     {
       "show": "Web Reactiva",
       "title": {
+        "en": "Ideas to solve hackathon challenges (WR 28)",
+        "es": "Ideas para resolver retos de un hackathon (WR 28)"
+      },
+      "url": "https://www.webreactiva.com/podcast/ideas-para-resolver-retos-de-hackathon",
+      "date": "2018"
+    },
+    {
+      "show": "Web Reactiva",
+      "title": {
         "en": "Programming in Kotlin with Borja Quevedo (WR 17)",
         "es": "Programar en Kotlin con Borja Quevedo (WR 17)"
       },
       "url": "https://www.webreactiva.com/podcast/programar-en-kotlin-con-borja-quevedo",
       "date": "2018"
+    }
+  ],
+  "community": [
+    {
+      "platform": "Web Reactiva",
+      "title": {
+        "en": "Kotlin for Web — Masterclass",
+        "es": "Kotlin para web — Masterclass"
+      },
+      "url": "https://www.webreactiva.com/cursos/masterclass/kotlin-para-web-con-borja-quevedo",
+      "type": "masterclass"
+    },
+    {
+      "platform": "Web Reactiva",
+      "title": {
+        "en": "Everything You Need to Know to Be an Android Developer — Q&A",
+        "es": "Todo lo que necesitas saber para ser un Android Developer — Q&A"
+      },
+      "url": "https://www.webreactiva.com/audios/preguntas-y-respuestas-android",
+      "type": "masterclass"
     }
   ],
   "testimonials": [

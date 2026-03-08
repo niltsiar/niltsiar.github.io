@@ -1,50 +1,94 @@
 ---
 import profile from '../../content/profile.json';
+import { useTranslations } from '../../i18n/translations';
 
 interface Props {
   lang: 'en' | 'es';
 }
 
 const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
-{profile.podcast?.length > 0 && (
+{(profile.podcast?.length > 0 || profile.community?.length > 0) && (
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-    <!-- Section header -->
     <div class="border-b-3 border-surface-900 dark:border-terminal-border pb-4 mb-8 sm:mb-12">
-      <h2 class="font-display font-bold uppercase tracking-tight text-surface-900 dark:text-terminal-fg" style="font-size: clamp(2.5rem, 6vw, 6rem);">
-        Podcast
+      <h2 class="font-display font-bold uppercase tracking-tight text-primary-600 dark:text-primary-400" style="font-size: clamp(2.5rem, 6vw, 6rem);">
+        {t('community.title')}
       </h2>
     </div>
 
-    <div class="border-3 border-surface-900 dark:border-terminal-border">
-      {profile.podcast.map((episode: any, index: number) => (
-        <a
-          href={episode.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={episode.title[lang]}
-          class={`block p-6 sm:p-8 hover:bg-surface-100 dark:hover:bg-terminal-hover group ${index < profile.podcast.length - 1 ? 'border-b-3 border-surface-900 dark:border-terminal-border' : ''}`}
-          style="transition: none;"
-        >
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
-            <div class="flex-1 min-w-0">
-              <h3 class="font-display text-base sm:text-lg font-bold uppercase text-surface-900 dark:text-terminal-fg group-hover:text-accent-500 dark:group-hover:text-accent-400" style="transition: none;">
-                {episode.title[lang]}
-              </h3>
-              <p class="font-display text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 mt-1">
-                {episode.show}
-              </p>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
-              <span class="font-display text-xs uppercase tracking-widest font-bold text-surface-500 dark:text-surface-400">{episode.date}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-surface-400 dark:text-surface-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                <path stroke-linecap="square" d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
+    {profile.podcast?.length > 0 && (
+      <div class="mb-8">
+        <h3 class="font-display text-xs uppercase tracking-widest font-bold text-surface-500 dark:text-surface-400 mb-4">
+          {t('community.podcast')}
+        </h3>
+        <div class="border-3 border-surface-900 dark:border-terminal-border">
+          {profile.podcast.map((episode: any, index: number) => (
+            <a
+              href={episode.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={episode.title[lang]}
+              class={`block p-6 sm:p-8 hover:bg-surface-100 dark:hover:bg-terminal-hover group ${index < profile.podcast.length - 1 ? 'border-b-3 border-surface-900 dark:border-terminal-border' : ''}`}
+              style="transition: none;"
+            >
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-display text-base sm:text-lg font-bold uppercase text-surface-900 dark:text-terminal-fg group-hover:text-accent-500 dark:group-hover:text-accent-400" style="transition: none;">
+                    {episode.title[lang]}
+                  </h4>
+                  <p class="font-display text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 mt-1">
+                    {episode.show}
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                  <span class="font-display text-xs uppercase tracking-widest font-bold text-surface-500 dark:text-surface-400">{episode.date}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-surface-400 dark:text-surface-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="square" d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {profile.community?.length > 0 && (
+      <div>
+        <h3 class="font-display text-xs uppercase tracking-widest font-bold text-surface-500 dark:text-surface-400 mb-4">
+          {t('community.also')}
+        </h3>
+        <div class="border-3 border-surface-900 dark:border-terminal-border">
+          {profile.community.map((item: any, index: number) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={item.title[lang]}
+              class={`block p-6 sm:p-8 hover:bg-surface-100 dark:hover:bg-terminal-hover group ${index < profile.community.length - 1 ? 'border-b-3 border-surface-900 dark:border-terminal-border' : ''}`}
+              style="transition: none;"
+            >
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-display text-base sm:text-lg font-bold uppercase text-surface-900 dark:text-terminal-fg group-hover:text-accent-500 dark:group-hover:text-accent-400" style="transition: none;">
+                    {item.title[lang]}
+                  </h4>
+                  <p class="font-display text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 mt-1">
+                    {item.platform}
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-surface-400 dark:text-surface-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="square" d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
   </div>
 )}

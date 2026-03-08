@@ -44,6 +44,12 @@ export const ui = {
     'contact.label': 'Contact',
     'contact.title': 'Get in touch',
 
+    // Community
+    'community.label': 'Community',
+    'community.title': 'Community',
+    'community.podcast': 'Podcast',
+    'community.also': 'Also featured in',
+
     // Footer
     'footer.rights': 'All rights reserved.',
     'footer.made': 'Made with',
@@ -84,6 +90,12 @@ export const ui = {
     // Contact
     'contact.label': 'Contacto',
     'contact.title': 'Contacto',
+
+    // Community
+    'community.label': 'Comunidad',
+    'community.title': 'Comunidad',
+    'community.podcast': 'Podcast',
+    'community.also': 'También en',
 
     // Footer
     'footer.rights': 'Todos los derechos reservados.',
