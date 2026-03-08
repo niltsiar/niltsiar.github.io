@@ -98,11 +98,52 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
         }
       };
 
+      var FAVICON_COLORS = {
+        'aston-martin': ['#229971','#c5e030','#0a0d0c','#edfdf6'],
+        'mclaren': ['#f97316','#5976ba','#0d0a08','#fff7ed'],
+        'ferrari': ['#DC0000','#a89818','#141214','#fffbfb'],
+        'valladolid': ['#63257E','#c9a84d','#0e0c14','#faf5ff'],
+        'cyberpunk': ['#8b5cf6','#ec4899','#0a0a0f','#faf5ff'],
+        'mercedes': ['#00a19b','#c8ccce','#060e0e','#f0fdfa']
+      };
+
+      const initFavicon = () => {
+        var palette = localStorage.getItem('design-palette') || 'aston-martin';
+        var c = FAVICON_COLORS[palette] || FAVICON_COLORS['aston-martin'];
+        var isDark = document.documentElement.classList.contains('dark');
+        var bg = isDark ? c[2] : c[3];
+        var svg;
+
+        if (currentDesign === 'brutalist') {
+          var bbg = isDark ? '#0a0a0a' : '#ffffff';
+          var btx = isDark ? '#ffffff' : '#0a0a0a';
+          svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">'
+            + '<rect width="128" height="128" fill="' + bbg + '"/>'
+            + '<rect width="128" height="18" fill="' + c[0] + '"/>'
+            + '<text x="64" y="96" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="68" fill="' + btx + '">BQ</text></svg>';
+        } else if (currentDesign === 'neon') {
+          svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">'
+            + '<defs><filter id="g"><feGaussianBlur stdDeviation="' + (isDark ? '4' : '2') + '" result="b"/>'
+            + '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'
+            + '<rect width="128" height="128" rx="16" fill="' + bg + '"/>'
+            + '<text x="64" y="90" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="64" fill="' + c[0] + '" filter="url(#g)">BQ</text></svg>';
+        } else {
+          svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">'
+            + '<rect width="128" height="128" rx="16" fill="' + bg + '"/>'
+            + '<text x="14" y="92" font-family="monospace" font-weight="700" font-size="80" fill="' + c[0] + '">&gt;</text>'
+            + '<rect x="80" y="78" width="34" height="8" rx="2" fill="' + c[1] + '"><animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/></rect></svg>';
+        }
+
+        var link = document.querySelector('link[rel="icon"]');
+        if (link) link.setAttribute('href', 'data:image/svg+xml,' + encodeURIComponent(svg));
+      };
+
       initTheme();
       initPalette();
       cleanUrl();
+      initFavicon();
 
-      document.addEventListener('astro:after-swap', () => { initTheme(); initPalette(); cleanUrl(); });
+      document.addEventListener('astro:after-swap', () => { initTheme(); initPalette(); cleanUrl(); initFavicon(); });
 
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a[href]');
@@ -137,6 +178,7 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
             document.documentElement.classList.add('dark');
             localStorage.setItem('theme', 'dark');
           }
+          initFavicon();
         }
         if (e.target.closest('#scroll-top')) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
