@@ -11,8 +11,8 @@ const t = useTranslations(lang);
 ---
 
 <div class="mt-4 font-mono text-sm sm:text-base border border-surface-200 dark:border-terminal-border p-4 bg-surface-100 dark:bg-terminal-bg shadow-sm overflow-x-auto whitespace-pre-wrap break-words">
-  <div class="mb-4 pb-2 border-b border-surface-300 dark:border-terminal-dim">
-    <span class="text-surface-600 dark:text-surface-300 font-bold">--- {t('community.podcast').toLowerCase()}.log ---</span>
+  <div class="mb-3">
+    <span class="text-surface-500 dark:text-surface-400 text-xs uppercase tracking-wider"># {t('community.podcast')}</span>
   </div>
   {profile.podcast.length > 0 ? (
     <ul class="space-y-4 list-none text-surface-800 dark:text-surface-300">
