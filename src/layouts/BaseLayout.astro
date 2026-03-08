@@ -7,10 +7,9 @@ interface Props {
   description: string;
   lang: 'en' | 'es';
   bodyClass?: string;
-  designSlug?: string;
 }
 
-const { title, description, lang, bodyClass = '', designSlug = 'terminal' } = Astro.props;
+const { title, description, lang, bodyClass = '' } = Astro.props;
 const canonicalBase = import.meta.env.SITE || Astro.url.origin;
 const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/`;
 ---
@@ -101,8 +100,6 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
 
       document.addEventListener('astro:after-swap', () => { initTheme(); initPalette(); cleanUrl(); });
 
-      var langSwitchScroll = null;
-
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a[href]');
         if (!link) return;
@@ -111,27 +108,8 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
 
         if (window.location.search.includes('dev') && !h.includes('dev')) {
           link.setAttribute('href', h + (h.includes('?') ? '&dev' : '?dev'));
-          h = link.getAttribute('href');
-        }
-
-        var switcher = document.getElementById('dev-switcher');
-        var cur = switcher ? switcher.dataset.current : '';
-        if (cur && h.includes('/' + cur + '/')) {
-          langSwitchScroll = window.scrollY;
         }
       }, true);
-
-      document.addEventListener('astro:after-swap', function() {
-        if (langSwitchScroll !== null) {
-          var pos = langSwitchScroll;
-          langSwitchScroll = null;
-          var orig = window.scrollTo.bind(window);
-          window.scrollTo = function() {
-            window.scrollTo = orig;
-            orig(0, pos);
-          };
-        }
-      });
 
       document.addEventListener('click', function(e) {
         const themeBtn = e.target.closest('#theme-toggle');

@@ -11,7 +11,7 @@ interface Props {
 const { title, description, lang } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} lang={lang} designSlug="neon" bodyClass="font-body bg-surface-100 text-surface-900 dark:bg-terminal-bg dark:text-terminal-fg min-h-screen selection:bg-primary-500/20 selection:text-primary-400">
+<BaseLayout title={title} description={description} lang={lang} bodyClass="font-body bg-surface-100 text-surface-900 dark:bg-terminal-bg dark:text-terminal-fg min-h-screen selection:bg-primary-500/20 selection:text-primary-400">
   <Fragment slot="fonts">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
