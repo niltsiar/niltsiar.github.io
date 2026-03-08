@@ -28,11 +28,11 @@ const otherLangUrl = lang === 'en' ? '/es/' : '/';
   </div>
   
   <div class="flex gap-4 font-bold text-sm">
-    <button id="theme-toggle" aria-label={lang === 'en' ? 'Toggle dark mode' : 'Cambiar modo oscuro'} class="group flex items-center gap-2 px-3 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
+    <button id="theme-toggle" aria-label={lang === 'en' ? 'theme — Toggle dark mode' : 'theme — Cambiar modo oscuro'} class="group flex items-center gap-2 px-3 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
       <span class="text-surface-500 dark:text-surface-400">$</span> 
       <span class="text-surface-700 dark:text-primary-500 group-hover:underline">theme</span>
     </button>
-    <a href={otherLangUrl} aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'} class="group flex items-center gap-2 px-3 py-2 min-h-[44px] rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
+    <a href={otherLangUrl} aria-label={`locales/${otherLang} — ${lang === 'en' ? 'Cambiar a español' : 'Switch to English'}`} class="group flex items-center gap-2 px-3 py-2 min-h-[44px] rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
       <span class="text-surface-500 dark:text-surface-400">$</span> 
       <span class="text-surface-700 dark:text-primary-500 group-hover:underline">locales/{otherLang}</span>
     </a>
