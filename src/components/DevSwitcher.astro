@@ -27,20 +27,20 @@ const { lang, currentDesign } = Astro.props;
         <span>Terminal · Aston Martin</span>
       </button>
       <button data-variant="1" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-[#f97316] inline-block shrink-0"></span>
-        <span>Terminal · McLaren</span>
-      </button>
-      <button data-variant="2" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-[#ef1a2d] inline-block shrink-0"></span>
         <span>Brutalist · Ferrari</span>
       </button>
-      <button data-variant="3" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-[#921b88] inline-block shrink-0"></span>
-        <span>Brutalist · Valladolid</span>
-      </button>
-      <button data-variant="4" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+      <button data-variant="2" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-[#8b5cf6] inline-block shrink-0"></span>
         <span>Neon · Cyberpunk</span>
+      </button>
+      <button data-variant="3" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#f97316] inline-block shrink-0"></span>
+        <span>Terminal · McLaren</span>
+      </button>
+      <button data-variant="4" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#921b88] inline-block shrink-0"></span>
+        <span>Brutalist · Valladolid</span>
       </button>
       <button data-variant="5" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-[#00a19b] inline-block shrink-0"></span>
@@ -55,27 +55,26 @@ const { lang, currentDesign } = Astro.props;
   var DESIGNS = {
     en: [
       { path: '/terminal/', palette: 'aston-martin' },
-      { path: '/terminal/', palette: 'mclaren' },
       { path: '/brutalist/', palette: 'ferrari' },
-      { path: '/brutalist/', palette: 'valladolid' },
       { path: '/neon/', palette: 'cyberpunk' },
+      { path: '/terminal/', palette: 'mclaren' },
+      { path: '/brutalist/', palette: 'valladolid' },
       { path: '/neon/', palette: 'mercedes' }
     ],
     es: [
       { path: '/terminal/es/', palette: 'aston-martin' },
-      { path: '/terminal/es/', palette: 'mclaren' },
       { path: '/brutalist/es/', palette: 'ferrari' },
-      { path: '/brutalist/es/', palette: 'valladolid' },
       { path: '/neon/es/', palette: 'cyberpunk' },
+      { path: '/terminal/es/', palette: 'mclaren' },
+      { path: '/brutalist/es/', palette: 'valladolid' },
       { path: '/neon/es/', palette: 'mercedes' }
     ]
   };
 
   var params = new URLSearchParams(window.location.search);
-  if (params.has('dev') || localStorage.getItem('dev-switcher') === 'on') {
+  if (params.has('dev')) {
     var el = document.getElementById('dev-switcher');
     if (el) el.classList.remove('hidden');
-    localStorage.setItem('dev-switcher', 'on');
   }
 
   var toggle = document.getElementById('dev-switcher-toggle');
@@ -107,7 +106,7 @@ const { lang, currentDesign } = Astro.props;
         document.documentElement.classList.add('palette-' + variant.palette);
         if (panel) panel.classList.add('hidden');
       } else {
-        location.replace(variant.path);
+        location.replace(variant.path + '?dev');
       }
     });
   });

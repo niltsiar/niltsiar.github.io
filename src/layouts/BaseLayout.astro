@@ -86,10 +86,20 @@ const canonicalUrl = lang === 'en' ? `${canonicalBase}/` : `${canonicalBase}/es/
         }
       };
 
+      const cleanUrl = () => {
+        var path = window.location.pathname;
+        var clean = path.replace(/^\/(terminal|brutalist|neon)/, '');
+        if (clean === '') clean = '/';
+        if (path !== clean) {
+          history.replaceState(null, '', clean + window.location.search);
+        }
+      };
+
       initTheme();
       initPalette();
+      cleanUrl();
 
-      document.addEventListener('astro:after-swap', () => { initTheme(); initPalette(); });
+      document.addEventListener('astro:after-swap', () => { initTheme(); initPalette(); cleanUrl(); });
 
       document.addEventListener('click', function(e) {
         const themeBtn = e.target.closest('#theme-toggle');

@@ -1,12 +1,12 @@
 ---
 /**
  * Dispatcher page — redirects to the correct design variant based on day of month.
- * Day % 6 maps to:
- *   0 → Terminal + Aston Martin (default)
- *   1 → Terminal + McLaren
- *   2 → Brutalist + Ferrari
- *   3 → Brutalist + Valladolid
- *   4 → Neon + Cyberpunk
+ * Day % 6 maps to (interleaved so consecutive days always differ):
+ *   0 → Terminal + Aston Martin
+ *   1 → Brutalist + Ferrari
+ *   2 → Neon + Cyberpunk
+ *   3 → Terminal + McLaren
+ *   4 → Brutalist + Valladolid
  *   5 → Neon + Mercedes
  */
 ---
@@ -20,10 +20,10 @@
       (function() {
         var DESIGNS = [
           { path: '/terminal/', palette: 'aston-martin' },
-          { path: '/terminal/', palette: 'mclaren' },
           { path: '/brutalist/', palette: 'ferrari' },
-          { path: '/brutalist/', palette: 'valladolid' },
           { path: '/neon/', palette: 'cyberpunk' },
+          { path: '/terminal/', palette: 'mclaren' },
+          { path: '/brutalist/', palette: 'valladolid' },
           { path: '/neon/', palette: 'mercedes' }
         ];
 
@@ -50,7 +50,7 @@
 
         localStorage.setItem('design-palette', variant.palette);
         localStorage.setItem('design-variant', JSON.stringify(variant));
-        location.replace(variant.path);
+        location.replace(variant.path + window.location.search);
       })();
     </script>
   </head>
