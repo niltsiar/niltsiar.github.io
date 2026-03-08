@@ -43,6 +43,8 @@
   --color-terminal-selection: rgba(34, 153, 113, 0.2);
   --color-terminal-border: #1a2e28;
   --color-terminal-header: #111916;
+  --color-terminal-hover: #15201c;
+  --color-terminal-chrome: #2a3e38;
 
   /* Fonts - JetBrains Mono + Fira Code Nerd */
   --font-display: 'JetBrains Mono', 'FiraCode Nerd Font', monospace;
@@ -149,13 +151,24 @@ body {
   background: var(--color-primary-500);
 }
 
+/* Focus visible styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.dark :focus-visible {
+  outline-color: var(--color-accent-400);
+}
+
 /* Selection color */
 ::selection {
   background: var(--color-terminal-selection);
   color: var(--color-primary-400);
 }
 
-/* Utility: animate on scroll */
+/* Utility: animate on scroll — JS adds .visible class via IntersectionObserver */
 .animate-on-scroll {
   opacity: 0;
 }
@@ -164,8 +177,25 @@ body {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* Fallback: show content if JS fails or reduced motion preferred */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+  }
+}
+
 /* Font ligatures for code aesthetic */
 code, pre, .font-mono {
   font-variant-ligatures: common-ligatures;
   font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

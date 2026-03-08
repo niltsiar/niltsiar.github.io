@@ -13,8 +13,8 @@ const t = useTranslations(lang);
 <div class="flex flex-col md:flex-row gap-6 lg:gap-12 items-start mt-4">
   <!-- Avatar / ASCII Art area -->
   <div class="w-full md:w-1/3 flex-shrink-0">
-    <div class="border border-surface-200 dark:border-terminal-border p-2 inline-block bg-surface-100 dark:bg-[#0d1411]">
-      <img src={profile.avatar} alt={profile.name} width="200" height="200" class="w-full max-w-[200px] md:max-w-full h-auto filter grayscale hover:grayscale-0 transition-all duration-500" />
+    <div class="border border-surface-200 dark:border-terminal-border p-2 inline-block bg-surface-100 dark:bg-terminal-bg shadow-sm">
+      <img src={profile.avatar} alt={profile.name} width="200" height="200" decoding="async" class="w-full max-w-[200px] md:max-w-full h-auto filter grayscale hover:grayscale-0 transition-all duration-500" />
     </div>
     
     <div class="mt-6 font-bold text-sm text-surface-600 dark:text-surface-400">
@@ -35,7 +35,7 @@ const t = useTranslations(lang);
   
   <!-- Content area -->
   <div class="w-full md:w-2/3">
-    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-surface-900 dark:text-primary-300 mb-2">
+    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-surface-900 dark:text-primary-300 dark:animate-glow mb-2">
       {profile.name}
     </h1>
     <h2 class="text-xl sm:text-2xl text-primary-600 dark:text-accent-400 mb-6 font-bold">

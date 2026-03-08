@@ -13,26 +13,26 @@ const otherLangUrl = lang === 'en' ? '/es/' : '/';
 
 <nav class="mb-8 w-full border-b-2 border-surface-200 dark:border-terminal-border pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
   <div class="flex gap-4 sm:gap-6 font-bold text-sm sm:text-base flex-wrap">
-    <a href={`#about`} class="text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
+    <a href={`#about`} class="py-2 text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
       <span class="text-surface-400 dark:text-surface-400">./</span>{t('nav.about')}
     </a>
-    <a href={`#experience`} class="text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
+    <a href={`#experience`} class="py-2 text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
       <span class="text-surface-400 dark:text-surface-400">./</span>{t('nav.experience')}
     </a>
-    <a href={`#projects`} class="text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
+    <a href={`#projects`} class="py-2 text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
       <span class="text-surface-400 dark:text-surface-400">./</span>{t('nav.projects')}
     </a>
-    <a href={`#skills`} class="text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
+    <a href={`#skills`} class="py-2 text-surface-600 hover:text-primary-600 dark:text-surface-400 dark:hover:text-primary-400 transition-colors">
       <span class="text-surface-400 dark:text-surface-400">./</span>{t('nav.skills')}
     </a>
   </div>
   
   <div class="flex gap-4 font-bold text-sm">
-    <button id="theme-toggle" class="group flex items-center gap-2 px-2 py-1 rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
+    <button id="theme-toggle" aria-label={lang === 'en' ? 'Toggle dark mode' : 'Cambiar modo oscuro'} class="group flex items-center gap-2 px-3 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
       <span class="text-surface-500 dark:text-surface-400">$</span> 
       <span class="text-surface-700 dark:text-primary-500 group-hover:underline">theme</span>
     </button>
-    <a href={otherLangUrl} class="group flex items-center gap-2 px-2 py-1 rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
+    <a href={otherLangUrl} aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'} class="group flex items-center gap-2 px-3 py-2 min-h-[44px] rounded hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
       <span class="text-surface-500 dark:text-surface-400">$</span> 
       <span class="text-surface-700 dark:text-primary-500 group-hover:underline">locales/{otherLang}</span>
     </a>

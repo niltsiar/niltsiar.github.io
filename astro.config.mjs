@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 
 export default defineConfig({
+  compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
   },

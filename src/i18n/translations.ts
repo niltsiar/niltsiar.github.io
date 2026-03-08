@@ -42,7 +42,7 @@ export const ui = {
 
     // Contact
     'contact.label': 'Contact',
-    'contact.title': 'Let\'s connect',
+    'contact.title': 'Get in touch',
 
     // Footer
     'footer.rights': 'All rights reserved.',
@@ -83,7 +83,7 @@ export const ui = {
 
     // Contact
     'contact.label': 'Contacto',
-    'contact.title': 'Conectemos',
+    'contact.title': 'Contacto',
 
     // Footer
     'footer.rights': 'Todos los derechos reservados.',

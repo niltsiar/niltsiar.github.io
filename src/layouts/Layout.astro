@@ -23,9 +23,42 @@ const { title, description, lang } = Astro.props;
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/2797575?v=4" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Canonical & i18n -->
+    <link rel="canonical" href={Astro.url} />
+    <link rel="alternate" hreflang="en" href={lang === 'en' ? Astro.url : new URL('/', Astro.url)} />
+    <link rel="alternate" hreflang="es" href={lang === 'es' ? Astro.url : new URL('/es/', Astro.url)} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#229971" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0d0c" media="(prefers-color-scheme: dark)" />
+
     <title>{title}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Borja Quevedo",
+      "url": String(Astro.url),
+      "image": "https://avatars.githubusercontent.com/u/2797575?v=4",
+      "jobTitle": lang === 'en' ? "Senior Android Developer" : "Desarrollador Android Senior",
+      "worksFor": { "@type": "Organization", "name": "Minddistrict" },
+      "sameAs": ["https://github.com/niltsiar", "https://linkedin.com/in/bquepab", "https://androiddev.social/@niltsiar"]
+    })} />
     
     <ClientRouter />
 
@@ -66,7 +99,58 @@ const { title, description, lang } = Astro.props;
             localStorage.setItem('theme', 'dark');
           }
         }
+        if (e.target.closest('#scroll-top')) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        const copyBtn = e.target.closest('.copy-btn');
+        if (copyBtn) {
+          const text = copyBtn.dataset.copy;
+          if (text) {
+            navigator.clipboard.writeText(text).then(() => {
+              const svg = copyBtn.querySelector('svg');
+              if (svg) {
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>';
+                setTimeout(() => {
+                  svg.innerHTML = '<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>';
+                }, 1500);
+              }
+            });
+          }
+        }
       });
+
+      // Scroll-to-top visibility
+      document.addEventListener('scroll', function() {
+        const btn = document.getElementById('scroll-top');
+        if (btn) {
+          if (window.scrollY > 500) {
+            btn.classList.remove('opacity-0', 'pointer-events-none');
+            btn.classList.add('opacity-100');
+          } else {
+            btn.classList.add('opacity-0', 'pointer-events-none');
+            btn.classList.remove('opacity-100');
+          }
+        }
+      }, { passive: true });
+
+      // Scroll reveal animations
+      const initScrollReveal = () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollReveal);
+      } else {
+        initScrollReveal();
+      }
+      document.addEventListener('astro:after-swap', initScrollReveal);
     </script>
   </head>
   <body class="font-mono bg-surface-50 text-surface-900 dark:bg-terminal-bg dark:text-terminal-fg min-h-screen selection:bg-terminal-selection selection:text-primary-400">
@@ -79,5 +163,14 @@ const { title, description, lang } = Astro.props;
       <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.05)_2px,rgba(0,0,0,0.05)_4px)]"></div>
     </div>
     <slot />
+    <button 
+      id="scroll-top" 
+      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-primary-600 dark:bg-terminal-hover border border-primary-700 dark:border-terminal-chrome text-white dark:text-primary-400 shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary-700 dark:hover:bg-terminal-chrome flex items-center justify-center"
+      aria-label={lang === 'en' ? 'Scroll to top' : 'Ir arriba'}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
   </body>
 </html>

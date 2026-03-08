@@ -8,19 +8,23 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<div class="mt-4 border border-surface-200 dark:border-terminal-border p-4 bg-surface-100 dark:bg-[#0a0f0d] shadow-sm font-mono text-sm leading-relaxed whitespace-pre-wrap break-words">
-  {profile.testimonials.map(testimonial => (
-    <div class="mb-6 last:mb-0">
-      <blockquote class="border-l-4 border-primary-500 dark:border-accent-500 pl-4 py-1 mb-2 text-surface-700 dark:text-surface-300 italic">
-        {testimonial.quote[lang].split('\n').map(line => (
-          <span class="block">&gt; {line}</span>
-        ))}
-      </blockquote>
-      <div class="text-right">
-        <span class="font-bold text-surface-900 dark:text-primary-300">-- {testimonial.author}</span>
-        <br/>
-        <span class="text-xs text-surface-500 dark:text-surface-300">{testimonial.role[lang]}</span>
+<div class="mt-4 border border-surface-200 dark:border-terminal-border p-4 bg-surface-100 dark:bg-terminal-bg shadow-sm font-mono text-sm leading-relaxed whitespace-pre-wrap break-words">
+  {profile.testimonials.length > 0 ? (
+    profile.testimonials.map(testimonial => (
+      <div class="mb-6 last:mb-0">
+        <blockquote class="border-l-4 border-primary-500 dark:border-accent-500 pl-4 py-1 mb-2 text-surface-700 dark:text-surface-300 italic">
+          {testimonial.quote[lang].split('\n').map(line => (
+            <span class="block">&gt; {line}</span>
+          ))}
+        </blockquote>
+        <div class="text-right">
+          <span class="font-bold text-surface-900 dark:text-primary-300">-- {testimonial.author}</span>
+          <br/>
+          <span class="text-xs text-surface-500 dark:text-surface-300">{testimonial.role[lang]}</span>
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  ) : (
+    <p class="text-surface-500 dark:text-surface-400 italic">// No testimonials yet</p>
+  )}
 </div>
