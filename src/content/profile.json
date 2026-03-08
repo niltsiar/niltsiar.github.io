@@ -149,7 +149,7 @@
       },
       "skills": ["Android", "Kotlin", "GNSS", "Galileo"],
       "period": "2020 - 2022",
-      "url": "https://galileogreenlane.eu"
+      "url": "https://www.euspa.europa.eu/pressroom/press-releases/galileo-green-lane-easing-pressure-eus-internal-borders"
     },
     {
       "name": "Covclear",
@@ -201,8 +201,8 @@
       },
       "skills": ["Java", "Spring Framework", "JavaScript"],
       "period": "2011 - 2012",
-      "url": "https://www.efca.europa.eu",
-      "url_es": "https://www.efca.europa.eu/es"
+      "url": "https://www.efca.europa.eu/en/content/efca-fisheries-information-system",
+      "url_es": "https://www.efca.europa.eu/es/content/efca-fisheries-information-system"
     },
     {
       "name": "ShipLocus",
