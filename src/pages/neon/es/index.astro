@@ -1,0 +1,55 @@
+---
+import NeonLayout from '../../../layouts/NeonLayout.astro';
+import profile from '../../../content/profile.json';
+
+import NeonNav from '../../../components/neon/NeonNav.astro';
+import NeonHero from '../../../components/neon/NeonHero.astro';
+import NeonAbout from '../../../components/neon/NeonAbout.astro';
+import NeonExperience from '../../../components/neon/NeonExperience.astro';
+import NeonProjects from '../../../components/neon/NeonProjects.astro';
+import NeonSkills from '../../../components/neon/NeonSkills.astro';
+import NeonTestimonials from '../../../components/neon/NeonTestimonials.astro';
+import NeonPodcast from '../../../components/neon/NeonPodcast.astro';
+import NeonContact from '../../../components/neon/NeonContact.astro';
+import NeonFooter from '../../../components/neon/NeonFooter.astro';
+
+const lang = 'es';
+---
+
+<NeonLayout title={`${profile.name} - ${profile.headline[lang]}`} description={profile.description[lang]} lang={lang}>
+  <NeonNav lang={lang} />
+
+  <main class="min-h-screen">
+    <NeonHero lang={lang} />
+
+    <section id="about" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonAbout lang={lang} />
+    </section>
+
+    <section id="experience" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonExperience lang={lang} />
+    </section>
+
+    <section id="projects" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonProjects lang={lang} />
+    </section>
+
+    <section id="skills" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonSkills lang={lang} />
+    </section>
+
+    <section id="testimonials" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonTestimonials lang={lang} />
+    </section>
+
+    <section id="podcast" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonPodcast lang={lang} />
+    </section>
+
+    <section id="contact" class="py-16 sm:py-20 scroll-mt-20 animate-on-scroll">
+      <NeonContact lang={lang} />
+    </section>
+  </main>
+
+  <NeonFooter lang={lang} />
+</NeonLayout>

@@ -1,0 +1,55 @@
+---
+import BrutalistLayout from '../../layouts/BrutalistLayout.astro';
+import profile from '../../content/profile.json';
+
+import BrutalistNav from '../../components/brutalist/BrutalistNav.astro';
+import BrutalistFooter from '../../components/brutalist/BrutalistFooter.astro';
+import BrutalistHero from '../../components/brutalist/BrutalistHero.astro';
+import BrutalistAbout from '../../components/brutalist/BrutalistAbout.astro';
+import BrutalistExperience from '../../components/brutalist/BrutalistExperience.astro';
+import BrutalistProjects from '../../components/brutalist/BrutalistProjects.astro';
+import BrutalistSkills from '../../components/brutalist/BrutalistSkills.astro';
+import BrutalistContact from '../../components/brutalist/BrutalistContact.astro';
+import BrutalistTestimonials from '../../components/brutalist/BrutalistTestimonials.astro';
+import BrutalistPodcast from '../../components/brutalist/BrutalistPodcast.astro';
+
+const lang = 'en';
+---
+
+<BrutalistLayout title={`${profile.name} - ${profile.headline[lang]}`} description={profile.description[lang]} lang={lang}>
+  <BrutalistNav lang={lang} />
+
+  <main>
+    <BrutalistHero lang={lang} />
+
+    <section id="about" class="animate-on-scroll border-b-3 border-surface-900 dark:border-terminal-border">
+      <BrutalistAbout lang={lang} />
+    </section>
+
+    <section id="experience" class="animate-on-scroll border-b-3 border-surface-900 dark:border-terminal-border scroll-mt-16">
+      <BrutalistExperience lang={lang} />
+    </section>
+
+    <section id="projects" class="animate-on-scroll border-b-3 border-surface-900 dark:border-terminal-border scroll-mt-16">
+      <BrutalistProjects lang={lang} />
+    </section>
+
+    <section id="skills" class="animate-on-scroll border-b-3 border-surface-900 dark:border-terminal-border scroll-mt-16">
+      <BrutalistSkills lang={lang} />
+    </section>
+
+    <section id="testimonials" class="animate-on-scroll border-b-3 border-surface-900 dark:border-terminal-border scroll-mt-16">
+      <BrutalistTestimonials lang={lang} />
+    </section>
+
+    <section id="podcast" class="animate-on-scroll border-b-3 border-surface-900 dark:border-terminal-border scroll-mt-16">
+      <BrutalistPodcast lang={lang} />
+    </section>
+
+    <section id="contact" class="animate-on-scroll scroll-mt-16">
+      <BrutalistContact lang={lang} />
+    </section>
+  </main>
+
+  <BrutalistFooter lang={lang} />
+</BrutalistLayout>

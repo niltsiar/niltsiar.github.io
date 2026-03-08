@@ -1,0 +1,24 @@
+---
+import { useTranslations } from '../../i18n/translations';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t-3 border-surface-900 dark:border-terminal-border bg-surface-50 dark:bg-terminal-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="font-display text-xs uppercase tracking-widest font-bold text-surface-700 dark:text-surface-400">
+        {t('footer.made')} <span class="text-orange-500">🧡</span> {t('footer.and')} <a href="https://webreactiva.com" target="_blank" rel="noopener noreferrer" class="text-accent-500 dark:text-accent-400 hover:text-surface-900 dark:hover:text-terminal-fg border-b-2 border-accent-500 dark:border-accent-400" style="transition: none;">Web Reactiva</a>
+      </p>
+      <p class="font-display text-xs uppercase tracking-widest font-bold text-surface-700 dark:text-surface-400">
+        &copy; {currentYear} Borja Quevedo. {t('footer.rights')}
+      </p>
+    </div>
+  </div>
+</footer>

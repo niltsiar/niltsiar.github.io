@@ -1,0 +1,90 @@
+---
+import profile from '../../content/profile.json';
+import { useTranslations } from '../../i18n/translations';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="border-b-3 border-surface-900 dark:border-terminal-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0">
+      <!-- Left column: avatar + badge -->
+      <div class="lg:col-span-3 lg:border-r-3 lg:border-surface-900 lg:dark:border-terminal-border lg:pr-8 flex flex-col items-start gap-6">
+        <img
+          src={profile.avatar}
+          alt={profile.name}
+          width="160"
+          height="160"
+          class="w-32 h-32 sm:w-40 sm:h-40 object-cover border-3 border-surface-900 dark:border-terminal-border grayscale"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="flex flex-col gap-2">
+          <span class="font-display text-xs uppercase tracking-widest font-bold text-surface-600 dark:text-surface-400">
+            {profile.location}
+          </span>
+          <span class="inline-block px-3 py-1 border-3 border-accent-500 dark:border-accent-400 font-display text-xs uppercase tracking-widest font-bold text-accent-500 dark:text-accent-400">
+            {profile.badge[lang]}
+          </span>
+        </div>
+      </div>
+
+      <!-- Right column: name + headline -->
+      <div class="lg:col-span-9 lg:pl-8 flex flex-col justify-between">
+        <div>
+          <h1 class="font-display font-bold uppercase leading-none tracking-tight text-surface-900 dark:text-terminal-fg" style="font-size: clamp(3rem, 8vw, 8rem);">
+            {profile.name}
+          </h1>
+          <div class="mt-4 border-t-3 border-surface-900 dark:border-terminal-border pt-4">
+            <p class="font-display text-lg sm:text-xl md:text-2xl uppercase font-bold tracking-wide text-accent-500 dark:text-accent-400">
+              {profile.headline[lang]}
+            </p>
+          </div>
+          <p class="mt-4 text-base sm:text-lg text-surface-700 dark:text-surface-400 max-w-3xl leading-relaxed">
+            {profile.subheadline[lang]}
+          </p>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-4">
+          <p class="text-sm sm:text-base text-surface-600 dark:text-surface-400 leading-relaxed max-w-3xl">
+            {profile.heroDescription[lang]}
+          </p>
+
+          <div class="mt-4 flex flex-col sm:flex-row gap-0">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-8 py-4 border-3 border-surface-900 dark:border-terminal-fg bg-surface-900 dark:bg-terminal-fg text-surface-50 dark:text-terminal-bg font-display text-sm uppercase tracking-widest font-bold hover:bg-accent-500 hover:border-accent-500 dark:hover:bg-accent-500 dark:hover:border-accent-500 min-h-[44px]"
+              style="transition: none;"
+            >
+              {t('hero.cta.contact')}
+            </a>
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center px-8 py-4 border-3 border-surface-900 dark:border-terminal-fg sm:border-l-0 border-t-0 sm:border-t-3 bg-surface-50 dark:bg-terminal-bg text-surface-900 dark:text-terminal-fg font-display text-sm uppercase tracking-widest font-bold hover:bg-surface-900 hover:text-surface-50 dark:hover:bg-terminal-fg dark:hover:text-terminal-bg min-h-[44px]"
+              style="transition: none;"
+            >
+              {t('hero.cta.projects')}
+            </a>
+          </div>
+        </div>
+
+        {profile.hobbies[lang] && (
+          <div class="mt-6 pt-4 border-t-3 border-surface-200 dark:border-terminal-border">
+            <div class="flex flex-wrap gap-2">
+              {profile.hobbies[lang].map((hobby: string) => (
+                <span class="font-display text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 font-bold">
+                  {hobby} /
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

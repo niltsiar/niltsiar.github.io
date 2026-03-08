@@ -1,0 +1,132 @@
+---
+interface Props {
+  lang: 'en' | 'es';
+  currentDesign: 'terminal' | 'brutalist' | 'neon';
+}
+
+const { lang, currentDesign } = Astro.props;
+---
+
+<div id="dev-switcher" class="fixed bottom-6 left-6 z-[9999] hidden" data-lang={lang} data-current={currentDesign}>
+  <button
+    id="dev-switcher-toggle"
+    class="w-10 h-10 rounded-full bg-gray-900 text-white text-xs font-bold shadow-lg border-2 border-gray-600 hover:border-white transition-colors flex items-center justify-center"
+    aria-label="Design switcher"
+    title="Design Variant Switcher (Dev Tool)"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+    </svg>
+  </button>
+
+  <div id="dev-switcher-panel" class="hidden absolute bottom-12 left-0 bg-gray-900 text-white rounded-lg shadow-2xl border border-gray-600 p-3 min-w-[220px]">
+    <div class="text-[10px] uppercase tracking-wider text-gray-400 mb-2 font-bold">Design Variants</div>
+    <div class="space-y-1" id="dev-switcher-options">
+      <button data-variant="0" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#229971] inline-block shrink-0"></span>
+        <span>Terminal · Aston Martin</span>
+      </button>
+      <button data-variant="1" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#f97316] inline-block shrink-0"></span>
+        <span>Terminal · McLaren</span>
+      </button>
+      <button data-variant="2" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#ef1a2d] inline-block shrink-0"></span>
+        <span>Brutalist · Ferrari</span>
+      </button>
+      <button data-variant="3" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#921b88] inline-block shrink-0"></span>
+        <span>Brutalist · Valladolid</span>
+      </button>
+      <button data-variant="4" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#8b5cf6] inline-block shrink-0"></span>
+        <span>Neon · Cyberpunk</span>
+      </button>
+      <button data-variant="5" class="dev-variant-btn w-full text-left px-3 py-2 rounded text-sm hover:bg-gray-700 transition-colors flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#00a19b] inline-block shrink-0"></span>
+        <span>Neon · Mercedes</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  var DESIGNS = {
+    en: [
+      { path: '/terminal/', palette: 'aston-martin' },
+      { path: '/terminal/', palette: 'mclaren' },
+      { path: '/brutalist/', palette: 'ferrari' },
+      { path: '/brutalist/', palette: 'valladolid' },
+      { path: '/neon/', palette: 'cyberpunk' },
+      { path: '/neon/', palette: 'mercedes' }
+    ],
+    es: [
+      { path: '/terminal/es/', palette: 'aston-martin' },
+      { path: '/terminal/es/', palette: 'mclaren' },
+      { path: '/brutalist/es/', palette: 'ferrari' },
+      { path: '/brutalist/es/', palette: 'valladolid' },
+      { path: '/neon/es/', palette: 'cyberpunk' },
+      { path: '/neon/es/', palette: 'mercedes' }
+    ]
+  };
+
+  var params = new URLSearchParams(window.location.search);
+  if (params.has('dev') || localStorage.getItem('dev-switcher') === 'on') {
+    var el = document.getElementById('dev-switcher');
+    if (el) el.classList.remove('hidden');
+    localStorage.setItem('dev-switcher', 'on');
+  }
+
+  var toggle = document.getElementById('dev-switcher-toggle');
+  var panel = document.getElementById('dev-switcher-panel');
+
+  if (toggle && panel) {
+    toggle.addEventListener('click', function() {
+      panel.classList.toggle('hidden');
+    });
+  }
+
+  document.querySelectorAll('.dev-variant-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(btn.dataset.variant, 10);
+      var switcher = document.getElementById('dev-switcher');
+      var lang = switcher ? switcher.dataset.lang : 'en';
+      var variant = DESIGNS[lang][idx];
+
+      localStorage.setItem('design-palette', variant.palette);
+      localStorage.setItem('design-variant', JSON.stringify(variant));
+
+      var currentDesign = switcher ? switcher.dataset.current : '';
+      var targetDesign = variant.path.split('/')[1];
+
+      if (currentDesign === targetDesign) {
+        document.documentElement.classList.forEach(function(c) {
+          if (c.startsWith('palette-')) document.documentElement.classList.remove(c);
+        });
+        document.documentElement.classList.add('palette-' + variant.palette);
+        if (panel) panel.classList.add('hidden');
+      } else {
+        location.replace(variant.path);
+      }
+    });
+  });
+
+  var currentSwitcher = document.getElementById('dev-switcher');
+  if (currentSwitcher) {
+    var currentDesign = currentSwitcher.dataset.current;
+    var currentPalette = localStorage.getItem('design-palette') || 'aston-martin';
+
+    document.querySelectorAll('.dev-variant-btn').forEach(function(btn) {
+      var idx = parseInt(btn.dataset.variant, 10);
+      var lang = currentSwitcher.dataset.lang || 'en';
+      var variant = DESIGNS[lang][idx];
+      var targetDesign = variant.path.split('/')[1];
+
+      if (targetDesign === currentDesign && variant.palette === currentPalette) {
+        btn.classList.add('bg-gray-700', 'ring-1', 'ring-white/30');
+      }
+    });
+  }
+})();
+</script>

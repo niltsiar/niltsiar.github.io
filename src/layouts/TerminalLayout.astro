@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import DevSwitcher from '../components/DevSwitcher.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'es';
+}
+
+const { title, description, lang } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} lang={lang} designSlug="terminal" bodyClass="font-mono bg-surface-50 text-surface-900 dark:bg-terminal-bg dark:text-terminal-fg min-h-screen selection:bg-terminal-selection selection:text-primary-400">
+  <Fragment slot="fonts">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </Fragment>
+
+  <Fragment slot="theme-color">
+    <meta name="theme-color" content="#229971" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0d0c" media="(prefers-color-scheme: dark)" />
+  </Fragment>
+
+  <div slot="overlay" class="pointer-events-none fixed inset-0 z-50 hidden dark:block" aria-hidden="true">
+    <div class="h-1 w-full bg-black/10 absolute top-0 animate-[scanline_8s_linear_infinite]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.3)_100%)]"></div>
+    <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.05)_2px,rgba(0,0,0,0.05)_4px)]"></div>
+  </div>
+
+  <slot />
+
+  <button
+    slot="scroll-top"
+    id="scroll-top"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-primary-600 dark:bg-terminal-hover border border-primary-700 dark:border-terminal-chrome text-white dark:text-primary-400 shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary-700 dark:hover:bg-terminal-chrome flex items-center justify-center"
+    aria-label={lang === 'en' ? 'Scroll to top' : 'Ir arriba'}
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <DevSwitcher slot="dev-switcher" lang={lang} currentDesign="terminal" />
+</BaseLayout>

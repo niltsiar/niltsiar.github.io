@@ -1,0 +1,49 @@
+---
+import profile from '../../content/profile.json';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+---
+
+{profile.testimonials?.length > 0 && (
+<div class="max-w-4xl mx-auto px-4 sm:px-6">
+  <div class="space-y-6">
+    {profile.testimonials.map((testimonial: any) => (
+      <div class="relative rounded-xl border border-primary-500/20 dark:border-primary-500/30 bg-surface-50/80 dark:bg-terminal-header/40 backdrop-blur-sm overflow-hidden">
+        <!-- Ambient neon glow -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--color-primary-500)_0%,transparent_50%)] opacity-[0.03] dark:opacity-[0.06] pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative p-6 sm:p-8">
+          <!-- Quote icon -->
+          <div class="mb-4" aria-hidden="true">
+            <svg class="w-8 h-8 text-primary-500/30 dark:text-primary-400/30" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z"/>
+            </svg>
+          </div>
+
+          <!-- Quote text -->
+          <blockquote class="text-base sm:text-lg leading-relaxed text-surface-700 dark:text-surface-300 mb-6 italic">
+            "{testimonial.quote[lang]}"
+          </blockquote>
+
+          <!-- Author -->
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-500/10 dark:bg-primary-500/20 border border-primary-500/20 dark:border-primary-500/30 flex items-center justify-center">
+              <span class="text-sm font-display font-bold text-primary-600 dark:text-primary-400">
+                {testimonial.author.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+              </span>
+            </div>
+            <div>
+              <div class="font-display font-semibold text-sm text-surface-900 dark:text-surface-100">{testimonial.author}</div>
+              <div class="text-xs text-surface-500 dark:text-surface-400">{testimonial.role[lang]}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+)}

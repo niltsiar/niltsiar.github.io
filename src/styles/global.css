@@ -108,7 +108,205 @@
   80% { clip-path: inset(10% 0 80% 0); }
 }
 
-/* Smooth transitions for theme changes */
+/* ============================================
+   PALETTE OVERRIDES
+   Applied via class on <html> element.
+   Each palette overrides primary, accent, surface, and terminal tokens.
+   ============================================ */
+
+/* McLaren Papaya Orange — Terminal Design Palette */
+.palette-mclaren {
+  --color-primary-50: #fff7ed;
+  --color-primary-100: #ffedd5;
+  --color-primary-200: #fed7aa;
+  --color-primary-300: #fdba74;
+  --color-primary-400: #fb923c;
+  --color-primary-500: #f97316;
+  --color-primary-600: #ea580c;
+  --color-primary-700: #c2410c;
+  --color-primary-800: #9a3412;
+  --color-primary-900: #7c2d12;
+
+  --color-accent-300: #93b4f5;
+  --color-accent-400: #5976ba;
+  --color-accent-500: #4a64a0;
+  --color-accent-600: #3b5186;
+
+  --color-terminal-bg: #0d0a08;
+  --color-terminal-fg: #f97316;
+  --color-terminal-dim: #7c2d12;
+  --color-terminal-cursor: #5976ba;
+  --color-terminal-selection: rgba(249, 115, 22, 0.2);
+  --color-terminal-border: #2e1a0d;
+  --color-terminal-header: #191008;
+  --color-terminal-hover: #201510;
+  --color-terminal-chrome: #3e2a18;
+}
+
+/* Ferrari Rosso Corsa — Brutalist Design Palette */
+.palette-ferrari {
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef1a2d;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+
+  --color-accent-300: #fef08a;
+  --color-accent-400: #facc15;
+  --color-accent-500: #eab308;
+  --color-accent-600: #ca8a04;
+
+  --color-surface-50: #fafafa;
+  --color-surface-100: #f4f4f5;
+  --color-surface-200: #e4e4e7;
+  --color-surface-300: #d4d4d8;
+  --color-surface-400: #a1a1aa;
+  --color-surface-500: #71717a;
+  --color-surface-600: #52525b;
+  --color-surface-700: #3f3f46;
+  --color-surface-800: #27272a;
+  --color-surface-900: #18181b;
+  --color-surface-950: #09090b;
+
+  --color-terminal-bg: #0a0a0a;
+  --color-terminal-fg: #ef1a2d;
+  --color-terminal-dim: #7f1d1d;
+  --color-terminal-cursor: #facc15;
+  --color-terminal-selection: rgba(239, 26, 45, 0.2);
+  --color-terminal-border: #2a1010;
+  --color-terminal-header: #141010;
+  --color-terminal-hover: #1c1010;
+  --color-terminal-chrome: #3a1818;
+}
+
+/* Real Valladolid Purple — Brutalist Design Palette */
+.palette-valladolid {
+  --color-primary-50: #fdf4ff;
+  --color-primary-100: #fae8ff;
+  --color-primary-200: #f5d0fe;
+  --color-primary-300: #e879f9;
+  --color-primary-400: #c026d3;
+  --color-primary-500: #921b88;
+  --color-primary-600: #7e1a77;
+  --color-primary-700: #6b1564;
+  --color-primary-800: #581151;
+  --color-primary-900: #460d3f;
+
+  --color-accent-300: #fef08a;
+  --color-accent-400: #f4e423;
+  --color-accent-500: #dfd015;
+  --color-accent-600: #b8a90e;
+
+  --color-surface-50: #fafafa;
+  --color-surface-100: #f4f4f5;
+  --color-surface-200: #e4e4e7;
+  --color-surface-300: #d4d4d8;
+  --color-surface-400: #a1a1aa;
+  --color-surface-500: #71717a;
+  --color-surface-600: #52525b;
+  --color-surface-700: #3f3f46;
+  --color-surface-800: #27272a;
+  --color-surface-900: #18181b;
+  --color-surface-950: #09090b;
+
+  --color-terminal-bg: #0a080a;
+  --color-terminal-fg: #c026d3;
+  --color-terminal-dim: #460d3f;
+  --color-terminal-cursor: #f4e423;
+  --color-terminal-selection: rgba(146, 27, 136, 0.2);
+  --color-terminal-border: #261028;
+  --color-terminal-header: #140a14;
+  --color-terminal-hover: #1c0e1c;
+  --color-terminal-chrome: #381a38;
+}
+
+/* Cyberpunk Purple — Neon Dream Design Palette */
+.palette-cyberpunk {
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+
+  --color-accent-300: #f9a8d4;
+  --color-accent-400: #ec4899;
+  --color-accent-500: #db2777;
+  --color-accent-600: #be185d;
+
+  --color-surface-50: #fafafa;
+  --color-surface-100: #f0f0f4;
+  --color-surface-200: #dddde4;
+  --color-surface-300: #c4c4d0;
+  --color-surface-400: #9191a8;
+  --color-surface-500: #6b6b84;
+  --color-surface-600: #4e4e66;
+  --color-surface-700: #3a3a50;
+  --color-surface-800: #24243a;
+  --color-surface-900: #16162a;
+  --color-surface-950: #0a0a0f;
+
+  --color-terminal-bg: #0a0a0f;
+  --color-terminal-fg: #8b5cf6;
+  --color-terminal-dim: #4c1d95;
+  --color-terminal-cursor: #ec4899;
+  --color-terminal-selection: rgba(139, 92, 246, 0.2);
+  --color-terminal-border: #1a1030;
+  --color-terminal-header: #100a1a;
+  --color-terminal-hover: #180e28;
+  --color-terminal-chrome: #2a1848;
+}
+
+/* Mercedes Petronas Teal — Neon Dream Design Palette */
+.palette-mercedes {
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #00a19b;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+
+  --color-accent-300: #e2e4e6;
+  --color-accent-400: #c8ccce;
+  --color-accent-500: #a8adb0;
+  --color-accent-600: #888e92;
+
+  --color-surface-50: #f8fafa;
+  --color-surface-100: #f0f2f2;
+  --color-surface-200: #dde2e2;
+  --color-surface-300: #bfc6c6;
+  --color-surface-400: #8e9a9a;
+  --color-surface-500: #667474;
+  --color-surface-600: #4d5c5c;
+  --color-surface-700: #3d4c4c;
+  --color-surface-800: #2a3838;
+  --color-surface-900: #182424;
+  --color-surface-950: #0a1212;
+
+  --color-terminal-bg: #060e0e;
+  --color-terminal-fg: #00a19b;
+  --color-terminal-dim: #134e4a;
+  --color-terminal-cursor: #c8ccce;
+  --color-terminal-selection: rgba(0, 161, 155, 0.2);
+  --color-terminal-border: #0e2a28;
+  --color-terminal-header: #081414;
+  --color-terminal-hover: #0c1e1c;
+  --color-terminal-chrome: #1a3836;
+}
+
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }

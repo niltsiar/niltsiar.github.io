@@ -1,0 +1,51 @@
+---
+import profile from '../../content/profile.json';
+import { useTranslations } from '../../i18n/translations';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+{profile.experience?.length > 0 && (
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+    <!-- Section header -->
+    <div class="border-b-3 border-surface-900 dark:border-terminal-border pb-4 mb-8 sm:mb-12">
+      <span class="font-display text-xs uppercase tracking-widest font-bold text-accent-500 dark:text-accent-400">{t('experience.label')}</span>
+      <h2 class="font-display font-bold uppercase tracking-tight text-surface-900 dark:text-terminal-fg mt-1" style="font-size: clamp(2.5rem, 6vw, 6rem);">
+        {t('experience.title')}
+      </h2>
+    </div>
+
+    <div class="space-y-0">
+      {profile.experience.map((job: any, index: number) => (
+        <div class={`grid grid-cols-1 md:grid-cols-12 gap-0 ${index < profile.experience.length - 1 ? 'border-b-3 border-surface-300 dark:border-terminal-border' : ''}`}>
+          <!-- Left: period + duration -->
+          <div class="md:col-span-3 md:border-r-3 md:border-surface-300 md:dark:border-terminal-border p-4 sm:p-6 md:p-8">
+            <p class="font-display text-sm font-bold uppercase text-surface-900 dark:text-terminal-fg">{job.period}</p>
+            <p class="font-display text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 mt-1">{job.duration[lang]}</p>
+            {job.current && (
+              <span class="inline-block mt-2 px-3 py-1 border-3 border-accent-500 dark:border-accent-400 font-display text-xs uppercase tracking-widest font-bold text-accent-500 dark:text-accent-400">
+                {t('experience.current')}
+              </span>
+            )}
+          </div>
+
+          <!-- Right: role + description -->
+          <div class="md:col-span-9 p-4 sm:p-6 md:p-8">
+            <h3 class="font-display text-xl sm:text-2xl font-bold uppercase text-surface-900 dark:text-terminal-fg">
+              {job.role[lang]}
+            </h3>
+            <p class="font-display text-sm font-bold uppercase text-accent-500 dark:text-accent-400 mt-1 truncate">{job.company}</p>
+            <p class="text-sm sm:text-base text-surface-700 dark:text-surface-400 mt-4 leading-relaxed">
+              {job.description[lang]}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}

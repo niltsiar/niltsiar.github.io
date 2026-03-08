@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import DevSwitcher from '../components/DevSwitcher.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'es';
+}
+
+const { title, description, lang } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} lang={lang} designSlug="brutalist" bodyClass="font-sans bg-surface-50 text-surface-900 dark:bg-terminal-bg dark:text-terminal-fg min-h-screen selection:bg-accent-400 selection:text-surface-950">
+  <Fragment slot="fonts">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </Fragment>
+
+  <Fragment slot="theme-color">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  </Fragment>
+
+  <slot />
+
+  <button
+    slot="scroll-top"
+    id="scroll-top"
+    class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-surface-900 dark:bg-terminal-fg border-3 border-surface-900 dark:border-terminal-fg text-surface-50 dark:text-terminal-bg opacity-0 pointer-events-none flex items-center justify-center hover:bg-accent-500 hover:border-accent-500 dark:hover:bg-accent-500 dark:hover:border-accent-500"
+    aria-label={lang === 'en' ? 'Scroll to top' : 'Ir arriba'}
+    style="transition: none;"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+      <path stroke-linecap="square" stroke-linejoin="miter" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <DevSwitcher slot="dev-switcher" lang={lang} currentDesign="brutalist" />
+</BaseLayout>
+
+<style is:global>
+  body {
+    font-family: 'Work Sans', sans-serif;
+  }
+  .font-display {
+    font-family: 'Space Mono', monospace;
+  }
+</style>

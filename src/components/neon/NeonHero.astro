@@ -1,0 +1,100 @@
+---
+import profile from '../../content/profile.json';
+import { useTranslations } from '../../i18n/translations';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="relative py-20 sm:py-28 lg:py-36 px-4 overflow-hidden">
+  <!-- Ambient radial glow behind hero -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+    <div class="w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,var(--color-primary-500)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12] blur-3xl"></div>
+  </div>
+  <div class="absolute top-20 right-10 w-[300px] h-[300px] rounded-full bg-[radial-gradient(circle,var(--color-accent-400)_0%,transparent_70%)] opacity-[0.04] dark:opacity-[0.08] blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative max-w-5xl mx-auto">
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+      <!-- Avatar with neon border -->
+      <div class="relative shrink-0">
+        <div class="absolute -inset-1 rounded-full bg-[conic-gradient(var(--color-primary-500),var(--color-accent-400),var(--color-primary-500))] opacity-60 dark:opacity-80 blur-sm animate-[glow_2s_ease-in-out_infinite_alternate]" aria-hidden="true"></div>
+        <img
+          src={profile.avatar}
+          alt={profile.name}
+          class="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-2 border-primary-400/60 dark:border-primary-400/80 shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary-500)_30%,transparent)]"
+          width="160"
+          height="160"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="text-center lg:text-left flex-1">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-500/30 dark:border-primary-500/40 bg-primary-500/5 dark:bg-primary-500/10 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary-400 animate-[glow_2s_ease-in-out_infinite_alternate]" aria-hidden="true"></span>
+          <span class="text-xs font-medium text-primary-600 dark:text-primary-400">{profile.badge[lang]}</span>
+        </div>
+
+        <!-- Name with glow -->
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-surface-900 dark:text-surface-50 mb-3 [text-shadow:0_0_30px_color-mix(in_srgb,var(--color-primary-500)_15%,transparent)] dark:[text-shadow:0_0_30px_color-mix(in_srgb,var(--color-primary-500)_30%,transparent)] hover:animate-[glitch_0.3s_ease-in-out] transition-all">
+          {profile.name}
+        </h1>
+
+        <!-- Headline -->
+        <p class="font-display font-semibold text-xl sm:text-2xl text-primary-600 dark:text-primary-400 [text-shadow:0_0_10px_color-mix(in_srgb,var(--color-primary-500)_20%,transparent)] dark:[text-shadow:0_0_10px_color-mix(in_srgb,var(--color-primary-400)_40%,transparent)] mb-2">
+          {profile.headline[lang]}
+        </p>
+
+        <!-- Subheadline -->
+        <p class="text-base text-surface-500 dark:text-surface-400 mb-2 max-w-xl mx-auto lg:mx-0">
+          {profile.subheadline[lang]}
+        </p>
+
+        <!-- Location -->
+        <p class="text-sm text-surface-400 dark:text-surface-500 mb-4">
+          <span aria-hidden="true">📍</span> {profile.location}
+        </p>
+
+        <!-- Hobbies -->
+        {profile.hobbies[lang]?.length > 0 && (
+          <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+            {profile.hobbies[lang].map((hobby: string) => (
+              <span class="px-3 py-1 text-xs rounded-full border border-surface-300/50 dark:border-terminal-border bg-surface-50/50 dark:bg-terminal-header/50 text-surface-500 dark:text-surface-400">
+                {hobby}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <!-- Hero description -->
+        <p class="text-base leading-relaxed text-surface-600 dark:text-surface-300 max-w-2xl mx-auto lg:mx-0 mb-8">
+          {profile.heroDescription[lang]}
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-semibold text-sm bg-primary-600 dark:bg-primary-600/80 text-surface-50 border border-primary-500 shadow-[0_0_15px_color-mix(in_srgb,var(--color-primary-500)_30%,transparent)] hover:shadow-[0_0_25px_color-mix(in_srgb,var(--color-primary-500)_50%,transparent)] hover:bg-primary-500 transition-all duration-300"
+            aria-label={t('hero.cta.contact')}
+          >
+            {t('hero.cta.contact')}
+          </a>
+          <a
+            href="#projects"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-semibold text-sm border border-primary-500/40 text-primary-600 dark:text-primary-400 hover:bg-primary-500/10 hover:shadow-[0_0_15px_color-mix(in_srgb,var(--color-primary-500)_20%,transparent)] transition-all duration-300"
+            aria-label={t('hero.cta.projects')}
+          >
+            {t('hero.cta.projects')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

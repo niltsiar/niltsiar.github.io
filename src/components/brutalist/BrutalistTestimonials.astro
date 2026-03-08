@@ -1,0 +1,34 @@
+---
+import profile from '../../content/profile.json';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+---
+
+{profile.testimonials?.length > 0 && (
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+    <!-- Section header -->
+    <div class="border-b-3 border-surface-900 dark:border-terminal-border pb-4 mb-8 sm:mb-12">
+      <h2 class="font-display font-bold uppercase tracking-tight text-surface-900 dark:text-terminal-fg" style="font-size: clamp(2.5rem, 6vw, 6rem);">
+        {lang === 'en' ? 'Testimonials' : 'Testimonios'}
+      </h2>
+    </div>
+
+    <div class="space-y-8">
+      {profile.testimonials.map((testimonial: any) => (
+        <blockquote class="border-l-[6px] border-accent-500 dark:border-accent-400 pl-6 sm:pl-8 py-4">
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed text-surface-800 dark:text-terminal-fg italic">
+            "{testimonial.quote[lang]}"
+          </p>
+          <footer class="mt-4 flex items-baseline gap-2">
+            <span class="font-display text-sm font-bold uppercase text-surface-900 dark:text-terminal-fg">{testimonial.author}</span>
+            <span class="font-display text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400">— {testimonial.role[lang]}</span>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+)}

@@ -8,7 +8,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const otherLang = lang === 'en' ? 'es' : 'en';
-const otherLangUrl = lang === 'en' ? '/es/' : '/';
+const otherLangUrl = lang === 'en' ? '/terminal/es/' : '/terminal/';
 ---
 
 <nav class="mb-8 w-full border-b-2 border-surface-200 dark:border-terminal-border pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">

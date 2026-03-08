@@ -1,0 +1,105 @@
+---
+import profile from '../../content/profile.json';
+import { useTranslations } from '../../i18n/translations';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+  <!-- Section header -->
+  <div class="border-b-3 border-surface-900 dark:border-terminal-border pb-4 mb-8 sm:mb-12">
+    <h2 class="font-display font-bold uppercase tracking-tight text-surface-900 dark:text-terminal-fg" style="font-size: clamp(2.5rem, 6vw, 6rem);">
+      {t('about.label')}
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0">
+    <!-- Bio column -->
+    <div class="lg:col-span-7 lg:border-r-3 lg:border-surface-900 lg:dark:border-terminal-border lg:pr-8">
+      <p class="text-base sm:text-lg leading-relaxed text-surface-800 dark:text-terminal-fg">
+        {profile.bio[lang]}
+      </p>
+
+      <!-- Stats row -->
+      <div class="mt-8 grid grid-cols-3 border-3 border-surface-900 dark:border-terminal-border">
+        <div class="p-4 sm:p-6 text-center border-r-3 border-surface-900 dark:border-terminal-border">
+          <span class="font-display text-2xl sm:text-4xl font-bold text-accent-500 dark:text-accent-400">17+</span>
+          <p class="font-display text-xs uppercase tracking-widest font-bold text-surface-600 dark:text-surface-400 mt-1">
+            {t('about.stats.experience')}
+          </p>
+        </div>
+        <a href={profile.github.url} target="_blank" rel="noopener noreferrer" class="p-4 sm:p-6 text-center border-r-3 border-surface-900 dark:border-terminal-border hover:bg-surface-100 dark:hover:bg-terminal-hover" style="transition: none;">
+          <span class="font-display text-2xl sm:text-4xl font-bold text-accent-500 dark:text-accent-400">{profile.github.publicRepos}</span>
+          <p class="font-display text-xs uppercase tracking-widest font-bold text-surface-600 dark:text-surface-400 mt-1">
+            {t('about.stats.repos')}
+          </p>
+        </a>
+        <a href={profile.github.url} target="_blank" rel="noopener noreferrer" class="p-4 sm:p-6 text-center hover:bg-surface-100 dark:hover:bg-terminal-hover" style="transition: none;">
+          <span class="font-display text-2xl sm:text-4xl font-bold text-accent-500 dark:text-accent-400">{profile.github.followers}</span>
+          <p class="font-display text-xs uppercase tracking-widest font-bold text-surface-600 dark:text-surface-400 mt-1">
+            {t('about.stats.followers')}
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Education + Certifications + Languages column -->
+    <div class="lg:col-span-5 lg:pl-8 flex flex-col gap-8">
+      <!-- Education -->
+      {profile.education?.length > 0 && (
+        <div>
+          <h3 class="font-display text-sm uppercase tracking-widest font-bold text-surface-900 dark:text-terminal-fg border-b-3 border-surface-900 dark:border-terminal-border pb-2 mb-4">
+            {lang === 'en' ? 'Education' : 'Educación'}
+          </h3>
+          {profile.education.map((edu: any) => (
+            <div class="mb-4">
+              <p class="font-display text-sm font-bold uppercase text-surface-900 dark:text-terminal-fg">{edu.degree[lang]}</p>
+              <p class="text-sm text-surface-600 dark:text-surface-400">{edu.institution} · {edu.period}</p>
+              {edu.thesis && <p class="text-xs text-surface-500 dark:text-surface-400 mt-1 italic">{edu.thesis[lang]}</p>}
+              {edu.activities && <p class="text-xs text-surface-500 dark:text-surface-400 mt-1">{edu.activities[lang]}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+
+      <!-- Certifications -->
+      {profile.certifications?.length > 0 && (
+        <div>
+          <h3 class="font-display text-sm uppercase tracking-widest font-bold text-surface-900 dark:text-terminal-fg border-b-3 border-surface-900 dark:border-terminal-border pb-2 mb-4">
+            {lang === 'en' ? 'Certifications' : 'Certificaciones'}
+          </h3>
+          <div class="space-y-2">
+            {profile.certifications.map((cert: any) => (
+              <div class="flex items-baseline justify-between gap-2">
+                <span class="text-sm font-bold text-surface-800 dark:text-terminal-fg truncate">{cert.name}</span>
+                <span class="font-display text-xs uppercase text-surface-500 dark:text-surface-400 shrink-0">{cert.issuer} · {cert.date}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Languages -->
+      {profile.languages?.length > 0 && (
+        <div>
+          <h3 class="font-display text-sm uppercase tracking-widest font-bold text-surface-900 dark:text-terminal-fg border-b-3 border-surface-900 dark:border-terminal-border pb-2 mb-4">
+            {lang === 'en' ? 'Languages' : 'Idiomas'}
+          </h3>
+          <div class="flex gap-4">
+            {profile.languages.map((language: any) => (
+              <div class="flex-1 border-3 border-surface-900 dark:border-terminal-border p-3">
+                <p class="font-display text-sm font-bold uppercase text-surface-900 dark:text-terminal-fg">{language.name[lang]}</p>
+                <p class="text-xs text-surface-500 dark:text-surface-400">{language.level[lang]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
