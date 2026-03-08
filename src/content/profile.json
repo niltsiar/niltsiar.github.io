@@ -1,5 +1,5 @@
 {
-  "name": "Borja Quevedo Pablos",
+  "name": "Borja Quevedo",
   "email": "borja.quevedo.pablos@gmail.com",
   "badge": {
     "en": "Open to new challenges",
@@ -26,8 +26,8 @@
     "es": "Soy un desarrollador de software apasionado que encontró su hogar en el ecosistema Android. Después de forjarme en sistemas backend con Java y .NET, di el salto al desarrollo móvil y nunca miré atrás. Disfruto resolviendo problemas complejos con código limpio y mantenible — ya sea construyendo plataformas de salud seguras, sistemas de comunicación V2X, o aplicaciones de monitorización medioambiental. Cuando no estoy programando, me encontrarás explorando conceptos de programación funcional, contribuyendo al código abierto, o mentorizando a otros desarrolladores. Creo que el gran software lo construyen personas que se preocupan tanto por el oficio como por los humanos que lo usan."
   },
   "description": {
-    "en": "Portfolio of Borja Quevedo Pablos — Senior Android Developer specializing in Kotlin, clean architecture, and secure mobile applications.",
-    "es": "Portfolio de Borja Quevedo Pablos — Desarrollador Android Senior especializado en Kotlin, arquitectura limpia y aplicaciones móviles seguras."
+    "en": "Portfolio of Borja Quevedo — Senior Android Developer specializing in Kotlin, clean architecture, and secure mobile applications.",
+    "es": "Portfolio de Borja Quevedo — Desarrollador Android Senior especializado en Kotlin, arquitectura limpia y aplicaciones móviles seguras."
   },
   "location": "Valladolid, Spain",
   "avatar": "https://avatars.githubusercontent.com/u/2797575?v=4",
