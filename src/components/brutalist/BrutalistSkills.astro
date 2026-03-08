@@ -22,7 +22,7 @@ const skillEntries = Object.entries(profile.skills) as [string, string[]][];
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
   <!-- Section header -->
   <div class="border-b-3 border-surface-900 dark:border-terminal-border pb-4 mb-8 sm:mb-12">
-    <span class="font-display text-xs uppercase tracking-widest font-bold text-accent-500 dark:text-accent-400">{t('skills.label')}</span>
+    <span class="font-display text-xs uppercase tracking-widest font-bold text-primary-600 dark:text-primary-400">{t('skills.label')}</span>
     <h2 class="font-display font-bold uppercase tracking-tight text-surface-900 dark:text-terminal-fg mt-1" style="font-size: clamp(2.5rem, 6vw, 6rem);">
       {t('skills.title')}
     </h2>
@@ -31,7 +31,7 @@ const skillEntries = Object.entries(profile.skills) as [string, string[]][];
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-3 border-surface-900 dark:border-terminal-border">
     {skillEntries.map(([category, skills], index) => (
       <div class={`p-6 sm:p-8 ${index < skillEntries.length - 1 ? 'border-b-3 sm:border-b-0 sm:border-r-3 border-surface-900 dark:border-terminal-border' : ''}`}>
-        <h3 class="font-display text-xs uppercase tracking-widest font-bold text-accent-500 dark:text-accent-400 mb-4 pb-2 border-b-2 border-surface-300 dark:border-terminal-border">
+        <h3 class="font-display text-xs uppercase tracking-widest font-bold text-primary-600 dark:text-primary-400 mb-4 pb-2 border-b-2 border-surface-300 dark:border-terminal-border">
           {categoryLabels[category]?.[lang] || category}
         </h3>
         <ul class="space-y-3">
